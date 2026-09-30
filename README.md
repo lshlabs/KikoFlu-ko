@@ -1,142 +1,103 @@
-<div align="center">
-  <img src="assets/icons/app_icon_opaque.png" alt="KikoFlu" width="120" height="120">
+# KikoFlu KO 🇰🇷
 
-  # KikoFlu
+KikoFlu KO는 [pa-jesusf/KikoFlu](https://github.com/pa-jesusf/KikoFlu)를 기반으로 한 비공식 한국어 현지화 포크입니다. 원본 KikoFlu의 기능과 구조를 유지하면서 한국어 UI를 추가하는 것을 목적으로 합니다. KikoFlu KO는 원본 프로젝트의 공식 배포판이 아닙니다.
 
-  [English](README_EN.md) | [日本語](README_JA.md) | 简体中文
-  
-  一个跨平台同人音声客户端，支持连接 Kikoeru 自建服务器或在线服务
+원본 프로젝트의 README는 [README_UPSTREAM.md](README_UPSTREAM.md)에서 원문 그대로 확인할 수 있습니다.
 
-  [![Flutter](https://img.shields.io/badge/Flutter-3.0+-02569B?logo=flutter)](https://flutter.dev)
-  [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](#)
-  [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+## 한국어 현지화
 
+- UI locale `ko`를 추가해 한국어 UI를 지원합니다.
+- 앱 설정 → 언어에서 `한국어`를 선택할 수 있습니다.
+- 총 1,104개의 localization key를 번역했습니다.
+- 기존 placeholder 구조와 기존 언어 지원을 유지합니다.
+- 서버 API, 플레이어 로직, 데이터베이스, Kikoeru 프로토콜은 변경하지 않았습니다.
 
-</div>
+한국어 번역 변경은 원본 프로젝트에 upstream Pull Request로 제안할 예정입니다.
 
-<div align="center">
-  <img src="screenshots/8.png" width="900" alt="KikoFlu 截图">
-</div>
+## 플랫폼 및 바이너리 제공 현황
 
-## 特性
+원본 KikoFlu는 Android, iOS, Windows, macOS, Linux를 지원하는 Flutter 크로스플랫폼 앱입니다. 아래 표는 원본의 플랫폼 지원 여부가 아니라 **KikoFlu KO 저장소에서 현재 제공하는 사전 빌드 바이너리 현황**을 나타냅니다.
 
-### 🎵 媒体播放
-- 后台播放与自动缓存机制
-- 迷你播放器、播放项目与播放进度持久化
-- 倍速播放
-- 单曲循环、列表循环、随机播放
-- 全局音频增益（支持衰减与增强）
-- 音频触感反馈(Beta)：移动端根据声音特征控制设备振动
-- 多媒体支持：音频、视频、文本、图片、PDF 等
-- 支持整个作品或选择性下载，并发下载管理
-- 离线下载搜索与排序
-- 本地导入作品元数据识别
+| 플랫폼 | KikoFlu KO 사전 빌드 제공 상태 |
+| --- | --- |
+| Android | 제공 — 직접 빌드 및 실기기 테스트 완료 |
+| Windows | 바이너리 미제공 |
+| macOS | 바이너리 미제공 |
+| Linux | 바이너리 미제공 |
+| iOS | 바이너리 미제공 |
 
-### 📝 字幕系统
-- 自动字幕加载
-- 字幕导入、编辑、调轴
-- 支持 `.vtt`、`.srt`、`.lrc`、`.txt`、`.ass`、`.ssa`、`.sub`、`.idx`、`.sbv`、`.dfxp`、`.ttml`
-- 字幕翻译（播放时实时翻译歌词/台词）
-- 播放器内翻译当前播放字幕，完成后立即显示并保存
-- 歌词/字幕全屏显示
-- 字幕库（SQLite 索引，快速检索）
-- 支持保存目录修改，跨硬盘拷贝
+KikoFlu KO의 소스 차원 현지화는 원본과 동일한 Flutter 코드베이스를 기반으로 합니다. 현재 이 저장소에서 직접 빌드·테스트하고 GitHub Release로 배포하는 사전 빌드 앱은 Android APK입니다.
 
-### 🎨 界面
-- 全平台支持（Android / iOS / Windows / macOS / Linux）
-- Material Design 3 设计规范
-- 液态玻璃导航栏与迷你播放器；Apple 系 26+ 平台默认开启，其他平台提供兼容模式
-- 横屏模式支持
-- 明暗主题自适应
-- 标题、文件目录、文本文件翻译
-- 标签自动翻译（中/英/日）
-- 防社死模式
-- 评分系统
-- 推荐作品功能
+## 다운로드
 
-### 🔍 搜索
-- 高级搜索，支持多标签 / 排除标签
-- 多维度筛选（标签、评分、发售日期等）
-- 完整作品信息展示
+[GitHub Releases](https://github.com/lshlabs/KikoFlu-ko/releases)에서 Android APK를 받을 수 있습니다.
 
-### 🌐 国际化
-- 简体中文 / 繁體中文 / English / 日本語 / Русский
-- 多形式、多语言翻译支持
+첫 배포 버전은 **KikoFlu KO v3.8.2-ko.1**이며, 기반 upstream 버전은 **KikoFlu 3.8.2**입니다.
 
-### ⚙️ 设置
-- 多账户支持
-- 自定义服务器地址（[使用指南](https://github.com/pa-jesusf/KikoFlu/wiki/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%BB%BA%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8)），可测试连接延迟
-- 自定义缓存大小限制与清理策略
-- 主题模式、配色方案自由选择
-- 翻译目标语言可单独设置，LLM 模式支持自定义目标语言
-- 字幕库优先级、音频格式偏好、预加载与音频增益等播放设置
-- 丰富的界面自定义选项
-- 应用内日志系统（支持导出）
-- 更新检查
+- `KikoFlu-KO-v3.8.2-ko.1-arm64-v8a.apk` — 대부분의 최근 Android 스마트폰에 권장합니다.
+- `KikoFlu-KO-v3.8.2-ko.1-universal.apk` — 기기 아키텍처를 모르는 경우 선택할 수 있습니다.
+- `KikoFlu-KO-v3.8.2-ko.1-armeabi-v7a.apk` — 구형 32-bit ARM Android 기기용입니다.
+- `KikoFlu-KO-v3.8.2-ko.1-x86_64.apk` — Android Emulator 및 일부 x86_64 환경용입니다.
 
-### 📝 悬浮字幕
-- Android、iOS、Windows、macOS、Linux 均支持悬浮字幕
-- Android 支持锁定 / 解锁与触控穿透，桌面端支持点击穿透
-- iOS 使用系统画中画显示悬浮字幕
+각 Release에는 파일 무결성 확인을 위한 `SHA256SUMS.txt`가 포함됩니다.
 
----
+## Android 패키지 정보
 
-## 下载
+KikoFlu KO는 공식 KikoFlu와 동시에 설치할 수 있도록 별도의 Android Application ID를 사용합니다.
 
-前往 [Releases](https://github.com/pa-jesusf/KikoFlu/releases/latest) 下载最新版本。
+- Application ID: `com.lshlabs.kikoflu.ko`
+- 앱 표시 이름: `KikoFlu KO`
 
-支持平台：Android（universal / arm64-v8a）、iOS（未签名 IPA）、Windows（安装包 / 便携版）、macOS（DMG）、Linux（x64 / arm64）
+별도 ID는 원본 KikoFlu의 패키지명과 충돌하지 않도록 하기 위한 것입니다.
 
-### AltStore / SideStore
+## 테스트 환경
 
-iOS 用户可通过 AltStore 或 SideStore 添加软件源来安装和更新 KikoFlu：
+다음 환경과 기능을 확인했습니다.
 
-**源地址：** `https://raw.githubusercontent.com/pa-jesusf/KikoFlu/main/altstore-source.json`
+- Galaxy S20, Android 13
+- Flutter 3.44.7, Android SDK 36
+- Self-hosted Kikoeru 서버 연결 (`http://SERVER_IP:8888` 형식)
+- 로그인, 작품 목록 탐색, 작품 상세 확인
+- 오디오 재생
+- 앱 설정에서 한국어 UI로 전환
 
----
+## 서버 연결
 
-## 源码构建
+KikoFlu KO는 기존 Kikoeru 서버 API를 그대로 사용합니다. 한국어 포팅 과정에서 서버 API나 통신 프로토콜을 변경하지 않았습니다. 앱의 서버 주소 설정에 사용하는 Kikoeru 서버 주소를 입력하면 됩니다.
 
-### 环境要求
-- Flutter SDK 3.44.1+
-- Dart SDK 3.12.1+
+## 직접 빌드
+
+Flutter 3.44.7 환경에서 저장소 루트에서 다음 명령을 실행합니다.
 
 ```bash
-git clone https://github.com/pa-jesusf/KikoFlu.git
-cd KikoFlu
 flutter pub get
+flutter gen-l10n
+flutter build apk --release
 ```
 
-### 构建命令
+ABI별 APK를 빌드하려면 다음 명령을 사용합니다.
 
-| 平台 | 命令 |
-|------|------|
-| Android | `flutter build apk --release --split-per-abi` |
-| Windows | `flutter build windows --release` |
-| macOS | `flutter build macos --release` |
-| Linux | `flutter build linux --release` |
-| iOS | `./build_ios_xcode.sh` |
+```bash
+flutter build apk --release --split-per-abi
+```
 
----
+## 원본 프로젝트 및 감사
 
-## 相关项目
+- 원본 프로젝트: [pa-jesusf/KikoFlu](https://github.com/pa-jesusf/KikoFlu)
 
-- [Kikoeru](https://github.com/Number178/kikoeru-express) — 自建后端服务器
-- [asmr.one](https://www.asmr.one) — 在线服务
+KikoFlu KO는 원본 KikoFlu를 기반으로 한 수정 및 현지화 포크입니다. 원본 개발자와 모든 기여자에게 감사드립니다. KikoFlu의 전체 기능 설명, 다른 플랫폼에 대한 안내, 최신 upstream 변경 사항은 [원본 프로젝트](https://github.com/pa-jesusf/KikoFlu)를 참고해 주세요.
 
-## 开源协议
+## 기여
 
-[GPL-3.0 License](LICENSE)
+다음 문제를 발견하면 [KikoFlu KO Issues](https://github.com/lshlabs/KikoFlu-ko/issues)에 제보해 주세요.
 
-## 联系方式
+- 오역 또는 어색한 한국어 표현
+- UI 텍스트 잘림
+- 한국어 locale 관련 문제
+- Android KO 빌드 문제
 
-- **问题反馈**：[Issues](https://github.com/pa-jesusf/KikoFlu/issues)
-- **交流群组**：[Telegram](https://t.me/+PrkiN-pZrXs4ZTU1)
+한국어 현지화 변경은 가능한 한 원본 프로젝트에도 반영하는 것을 목표로 합니다.
 
----
+## 라이선스
 
-<div align="center">
-
-  **如果这个项目对你有帮助，请给个 ⭐ Star 支持一下！**
-
-</div>
+KikoFlu KO는 원본과 동일하게 GPL-3.0 License를 따릅니다. 원본 저작권과 라이선스 고지는 저장소의 [LICENSE](LICENSE) 파일을 확인해 주세요.
