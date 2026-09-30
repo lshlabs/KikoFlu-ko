@@ -1273,6 +1273,9 @@ class SRu extends S {
   String get languageRu => 'Русский';
 
   @override
+  String get languageKo => 'Корейский';
+
+  @override
   String get themeModeDark => 'Тёмный режим';
 
   @override

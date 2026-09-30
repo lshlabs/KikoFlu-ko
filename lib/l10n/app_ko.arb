@@ -1,0 +1,2245 @@
+{
+  "@@locale": "ko",
+  "appTitle": "KikoFlu",
+  "navHome": "홈",
+  "navSearch": "검색",
+  "navMy": "내 콘텐츠",
+  "navSettings": "설정",
+  "offlineModeMessage": "네트워크에 연결할 수 없어 오프라인 모드로 시작했습니다. 다운로드한 콘텐츠만 이용할 수 있습니다.",
+  "retry": "다시 시도",
+  "searchTypeKeyword": "키워드",
+  "searchTypeTag": "태그",
+  "searchTypeVa": "성우",
+  "searchTypeCircle": "서클",
+  "searchTypeRjNumber": "RJ 번호",
+  "searchHintKeyword": "작품명이나 키워드 입력...",
+  "searchHintTag": "태그 입력...",
+  "searchHintVa": "성우 이름 입력...",
+  "searchHintCircle": "서클 이름 입력...",
+  "searchHintRjNumber": "번호 입력...",
+  "ageRatingAll": "전체",
+  "ageRatingGeneral": "전연령",
+  "ageRatingR15": "R-15",
+  "ageRatingAdult": "성인",
+  "salesRangeAll": "전체",
+  "sortRelease": "발매일",
+  "sortCreateAt": "추가일",
+  "sortCreateDate": "등록일",
+  "sortRating": "평점",
+  "sortReviewCount": "리뷰 수",
+  "sortRandom": "무작위",
+  "sortDlCount": "판매량",
+  "sortPrice": "가격",
+  "sortNsfw": "전연령",
+  "sortUpdatedAt": "표시일",
+  "sortAsc": "오름차순",
+  "sortDesc": "내림차순",
+  "sortOptions": "정렬 옵션",
+  "sortField": "정렬 기준",
+  "sortDirection": "정렬 순서",
+  "displayModeAll": "전체",
+  "displayModePopular": "인기",
+  "displayModeRecommended": "추천",
+  "subtitlePriorityHighest": "우선",
+  "subtitlePriorityLowest": "나중",
+  "translationSourceGoogle": "Google 번역",
+  "translationSourceYoudao": "Youdao 번역",
+  "translationSourceMicrosoft": "Microsoft 번역",
+  "translationSourceLlm": "LLM 번역",
+  "progressMarked": "표시함",
+  "progressListening": "듣는 중",
+  "progressListened": "들음",
+  "progressReplay": "다시 듣기",
+  "progressPostponed": "나중에 듣기",
+  "loginTitle": "로그인",
+  "register": "가입",
+  "addAccount": "계정 추가",
+  "registerAccount": "계정 등록",
+  "username": "사용자 이름",
+  "password": "비밀번호",
+  "serverAddress": "서버 주소",
+  "serverCookie": "서버 쿠키",
+  "login": "로그인",
+  "loginSuccess": "로그인했습니다",
+  "loginFailed": "로그인에 실패했습니다",
+  "registerFailed": "가입에 실패했습니다",
+  "usernameMinLength": "사용자 이름은 5자 이상이어야 합니다",
+  "passwordMinLength": "비밀번호는 5자 이상이어야 합니다",
+  "accountAdded": "계정 \"{username}\"을(를) 추가했습니다",
+  "@accountAdded": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "testConnection": "연결 테스트",
+  "testing": "테스트 중...",
+  "enterServerAddressToTest": "연결을 테스트할 서버 주소를 입력하세요",
+  "latencyMs": "{ms}ms",
+  "@latencyMs": {
+    "placeholders": {
+      "ms": {
+        "type": "String"
+      }
+    }
+  },
+  "connectionFailed": "연결에 실패했습니다",
+  "guestModeTitle": "게스트 모드 확인",
+  "guestModeMessage": "게스트 모드에서는 일부 기능을 사용할 수 없습니다:\n\n• 작품 표시 및 평점 등록 불가\n• 플레이리스트 생성 불가\n• 재생 진행 상황 동기화 불가\n\n게스트 모드는 데모 계정으로 서버에 연결하며, 연결이 불안정할 수 있습니다.",
+  "continueGuestMode": "게스트 모드로 계속",
+  "guestAccountAdded": "게스트 계정을 추가했습니다",
+  "guestLoginFailed": "게스트 로그인에 실패했습니다",
+  "guestMode": "게스트 모드",
+  "cancel": "취소",
+  "confirm": "확인",
+  "close": "닫기",
+  "delete": "삭제",
+  "save": "저장",
+  "edit": "수정",
+  "add": "추가",
+  "create": "만들기",
+  "ok": "확인",
+  "search": "검색",
+  "filter": "필터",
+  "advancedFilter": "상세 필터",
+  "enterSearchContent": "검색어를 입력하세요",
+  "searchTag": "태그 검색...",
+  "minRating": "최저 평점",
+  "minRatingStars": "별 {stars}개",
+  "@minRatingStars": {
+    "placeholders": {
+      "stars": {
+        "type": "String"
+      }
+    }
+  },
+  "searchHistory": "검색 기록",
+  "clearSearchHistory": "검색 기록 삭제",
+  "clearSearchHistoryConfirm": "검색 기록을 모두 삭제할까요?",
+  "clear": "지우기",
+  "searchHistoryCleared": "검색 기록을 삭제했습니다",
+  "noSearchHistory": "검색 기록이 없습니다",
+  "excludeMode": "제외",
+  "includeMode": "포함",
+  "includeModeTapAgainHint": "포함: {searchType} (다시 누르면 제외로 전환)",
+  "@includeModeTapAgainHint": {
+    "placeholders": {
+      "searchType": {
+        "type": "String"
+      }
+    }
+  },
+  "noResults": "검색 결과가 없습니다",
+  "loadFailed": "불러오지 못했습니다",
+  "loadFailedWithError": "불러오지 못했습니다: {error}",
+  "@loadFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "loading": "불러오는 중...",
+  "calculating": "계산 중...",
+  "getFailed": "가져오지 못했습니다",
+  "settingsTitle": "설정",
+  "accountManagement": "계정 관리",
+  "accountManagementSubtitle": "여러 계정을 관리하고 전환합니다",
+  "privacyMode": "프라이버시 모드",
+  "privacyModeEnabled": "사용 중 - 재생 정보가 숨겨집니다",
+  "privacyModeDisabled": "사용 안 함",
+  "permissionManagement": "권한 관리",
+  "permissionManagementSubtitle": "알림 및 백그라운드 실행 권한",
+  "desktopFloatingLyric": "데스크톱 플로팅 가사",
+  "floatingLyricEnabled": "사용 중 - 데스크톱에 가사가 표시됩니다",
+  "floatingLyricDisabled": "사용 안 함",
+  "floatingLyricTouch": "플로팅 가사 잠금",
+  "floatingLyricTouchEnabled": "잠금 해제 - 가사를 드래그하고 길게 눌러 잠급니다",
+  "floatingLyricTouchDisabled": "잠김 - 플로팅 가사를 길게 눌러 잠금을 해제합니다",
+  "floatingLyricClickThrough": "플로팅 가사 클릭 통과",
+  "floatingLyricClickThroughEnabled": "사용 중 - 플로팅 가사가 마우스 입력을 무시합니다",
+  "floatingLyricClickThroughDisabled": "사용 안 함 - 플로팅 가사를 드래그할 수 있습니다",
+  "floatingFPS": "FPS 표시",
+  "floatingFPSEnabled": "사용 중 - 플로팅 창 왼쪽 아래에 FPS가 표시됩니다",
+  "floatingFPSDisabled": "사용 안 함",
+  "floatingNetworkSpeed": "네트워크 속도 표시",
+  "floatingNetworkSpeedEnabled": "사용 중 - 플로팅 창 오른쪽 아래에 속도가 표시됩니다",
+  "floatingNetworkSpeedDisabled": "사용 안 함",
+  "styleSettings": "스타일 설정",
+  "styleSettingsSubtitle": "글꼴, 색상, 투명도 등을 설정합니다",
+  "downloadPath": "다운로드 경로",
+  "downloadPathSubtitle": "파일을 저장할 위치를 설정합니다",
+  "maxConcurrentDownloads": "동시 다운로드 수",
+  "maxConcurrentDownloadsSubtitle": "동시에 진행할 다운로드 수를 제한합니다",
+  "cacheManagement": "캐시 관리",
+  "currentCache": "현재 캐시: {size}",
+  "@currentCache": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "themeSettings": "테마 설정",
+  "themeSettingsSubtitle": "다크 모드, 테마 색상 등을 설정합니다",
+  "uiSettings": "화면 설정",
+  "uiSettingsSubtitle": "플레이어, 상세 페이지, 카드 등을 설정합니다",
+  "liquidGlassNavigation": "리퀴드 글래스 탐색 바",
+  "liquidGlassNavigationDesc": "글래스 탐색 바와 미니 플레이어입니다. Apple OS 26 이상에서는 기본으로 사용합니다.",
+  "fallbackGlassTransparency": "리퀴드 글래스 투명도",
+  "fallbackGlassTransparencyDesc": "앱에서 표현하는 글래스 효과의 투명도를 조절합니다.",
+  "preferenceSettings": "환경 설정",
+  "preferenceSettingsSubtitle": "번역, 재생 및 네트워크 설정",
+  "aboutTitle": "정보",
+  "unknownVersion": "알 수 없음",
+  "licenseLoadFailed": "LICENSE 파일을 불러오지 못했습니다",
+  "licenseEmpty": "LICENSE 파일이 비어 있습니다",
+  "failedToLoadAbout": "앱 정보를 불러오지 못했습니다",
+  "newVersionFound": "새 버전 발견",
+  "newVersionAvailable": "새 버전 {version}을(를) 사용할 수 있습니다 (현재: {current})",
+  "@newVersionAvailable": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "current": {
+        "type": "String"
+      }
+    }
+  },
+  "versionInfo": "버전 정보",
+  "currentVersion": "현재 버전: {version}",
+  "@currentVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "checkUpdate": "업데이트 확인",
+  "author": "개발자",
+  "projectRepo": "프로젝트 저장소",
+  "openSourceLicense": "오픈 소스 라이선스",
+  "cannotOpenLink": "링크를 열 수 없습니다",
+  "openLinkFailed": "링크를 열지 못했습니다: {error}",
+  "@openLinkFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "foundNewVersion": "새 버전 {version}을(를) 찾았습니다",
+  "@foundNewVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "view": "보기",
+  "alreadyLatestVersion": "최신 버전을 사용 중입니다",
+  "checkUpdateFailed": "업데이트를 확인하지 못했습니다. 네트워크 연결을 확인하세요",
+  "onlineMarks": "온라인 표시",
+  "historyRecord": "기록",
+  "playlists": "플레이리스트",
+  "downloaded": "다운로드됨",
+  "downloadTasks": "다운로드 작업",
+  "subtitleLibrary": "자막 보관함",
+  "all": "전체",
+  "marked": "표시함",
+  "listening": "듣는 중",
+  "listened": "들음",
+  "replayMark": "다시 듣기",
+  "postponed": "나중에 듣기",
+  "switchToSmallGrid": "작은 격자로 보기",
+  "switchToList": "목록으로 보기",
+  "switchToLargeGrid": "큰 격자로 보기",
+  "sort": "정렬",
+  "noPlayHistory": "재생 기록이 없습니다",
+  "clearHistory": "기록 삭제",
+  "clearHistoryTitle": "기록 삭제",
+  "clearHistoryConfirm": "재생 기록을 모두 삭제할까요? 이 작업은 되돌릴 수 없습니다.",
+  "popularNoSort": "인기 모드에서는 정렬할 수 없습니다",
+  "recommendedNoSort": "추천 모드에서는 정렬할 수 없습니다",
+  "showAllWorks": "모든 작품 표시",
+  "showOnlySubtitled": "자막이 있는 작품만 표시",
+  "selectedCount": "{count}개 선택",
+  "@selectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "selectAll": "모두 선택",
+  "deselectAll": "선택 해제",
+  "select": "선택",
+  "noDownloadTasks": "다운로드 작업이 없습니다",
+  "nFiles": "파일 {count}개",
+  "@nFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "errorWithMessage": "오류: {error}",
+  "@errorWithMessage": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "pause": "일시 정지",
+  "resume": "계속",
+  "deletionConfirmTitle": "삭제 확인",
+  "deletionConfirmMessage": "선택한 다운로드 작업 {count}개를 삭제할까요? 다운로드한 파일도 함께 삭제됩니다.",
+  "@deletionConfirmMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deletedNFiles": "파일 {count}개를 삭제했습니다",
+  "@deletedNFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadStatusPending": "대기 중",
+  "downloadStatusDownloading": "다운로드 중",
+  "downloadStatusCompleted": "완료",
+  "downloadStatusFailed": "실패",
+  "downloadStatusPaused": "일시 정지",
+  "translationFailed": "번역에 실패했습니다: {error}",
+  "@translationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "copiedToClipboard": "{label} 복사됨: {text}",
+  "@copiedToClipboard": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "loadingFileList": "파일 목록을 불러오는 중...",
+  "loadFileListFailed": "파일 목록을 불러오지 못했습니다: {error}",
+  "@loadFileListFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "playlistTitle": "플레이리스트",
+  "noAudioPlaying": "재생 중인 오디오가 없습니다",
+  "playbackSpeed": "재생 속도",
+  "backward10s": "10초 뒤로",
+  "forward10s": "10초 앞으로",
+  "sleepTimer": "취침 타이머",
+  "repeatMode": "반복 모드",
+  "repeatOff": "사용 안 함",
+  "repeatOne": "한 곡 반복",
+  "repeatAll": "전체 반복",
+  "addMark": "표시 추가",
+  "viewDetail": "상세 정보",
+  "volume": "음량",
+  "sleepTimerTitle": "취침 타이머",
+  "aboutToStop": "종료 예정",
+  "remainingTime": "남은 시간",
+  "finishCurrentTrack": "현재 트랙이 끝나면 정지",
+  "addMinutes": "+{min}분",
+  "@addMinutes": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelTimer": "타이머 취소",
+  "duration": "재생 시간",
+  "specifyTime": "시간 지정",
+  "selectTimerDuration": "타이머 시간을 선택하세요",
+  "selectStopTime": "재생을 멈출 시간을 선택하세요",
+  "markWork": "작품 표시",
+  "addToPlaylist": "플레이리스트에 추가",
+  "remove": "삭제",
+  "createPlaylist": "플레이리스트 만들기",
+  "addPlaylist": "플레이리스트 추가",
+  "playlistName": "플레이리스트 이름",
+  "enterPlaylistName": "이름 입력",
+  "privacySetting": "공개 범위",
+  "playlistDescription": "설명 (선택 사항)",
+  "addDescription": "설명 추가",
+  "enterPlaylistNameWarning": "플레이리스트 이름을 입력하세요",
+  "enterPlaylistLink": "플레이리스트 링크를 입력하세요",
+  "switchAccountTitle": "계정 전환",
+  "switchAccountConfirm": "계정 \"{username}\"으로 전환할까요?",
+  "@switchAccountConfirm": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "switchedToAccount": "계정 \"{username}\"으로 전환했습니다",
+  "@switchedToAccount": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "switchFailed": "계정 정보를 확인하세요. 계정 전환에 실패했습니다",
+  "switchFailedWithError": "계정 전환에 실패했습니다: {error}",
+  "@switchFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noAccounts": "계정이 없습니다",
+  "tapToAddAccount": "오른쪽 아래 버튼을 눌러 계정을 추가하세요",
+  "currentAccount": "현재 계정",
+  "switchAction": "전환",
+  "deleteAccount": "계정 삭제",
+  "deleteAccountConfirm": "계정 \"{username}\"을(를) 삭제할까요? 이 작업은 되돌릴 수 없습니다.",
+  "@deleteAccountConfirm": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "accountDeleted": "계정을 삭제했습니다",
+  "deletionFailedWithError": "삭제에 실패했습니다: {error}",
+  "@deletionFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "subtitleLibraryPriority": "자막 보관함 우선순위",
+  "selectSubtitlePriority": "자동으로 불러올 자막의 우선순위를 선택하세요:",
+  "subtitlePriorityHighestDesc": "자막 보관함을 먼저 검색한 다음 온라인 및 다운로드 항목을 검색합니다",
+  "subtitlePriorityLowestDesc": "온라인 및 다운로드 항목을 먼저 검색한 다음 자막 보관함을 검색합니다",
+  "defaultSortSettings": "기본 정렬 설정",
+  "defaultSortUpdated": "기본 정렬을 업데이트했습니다",
+  "translationSourceSettings": "번역 서비스 설정",
+  "selectTranslationProvider": "번역 서비스를 선택하세요:",
+  "translationTargetLanguage": "번역 대상 언어",
+  "autoSaveTranslatedLyrics": "번역한 가사 자동 저장",
+  "autoSaveTranslatedLyricsDesc": "번역을 자막 보관함에 저장합니다. 끄면 현재 재생 중에만 표시됩니다.",
+  "selectTranslationTargetLanguage": "번역할 언어를 선택하세요:",
+  "translationLanguageFollowApp": "앱 언어 따르기",
+  "translationLanguageZhHans": "중국어 간체",
+  "translationLanguageZhHant": "중국어 번체",
+  "translationLanguageEnglish": "영어",
+  "translationLanguageJapanese": "일본어",
+  "translationLanguageRussian": "러시아어",
+  "translationLanguageCustom": "직접 입력",
+  "translationCustomTargetLanguage": "번역 대상 언어 직접 입력",
+  "translationCustomLanguageHint": "언어 이름 (예: Korean)",
+  "translationCustomLanguageLabel": "직접 입력: {value}",
+  "@translationCustomLanguageLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "translationCustomTargetRequiresLlm": "LLM 번역에서만 사용할 수 있습니다",
+  "needsConfiguration": "설정 필요",
+  "llmTranslation": "LLM 번역",
+  "goToConfigure": "설정하기",
+  "subtitlePrioritySettingSubtitle": "자막 보관함 우선순위",
+  "defaultSortSettingTitle": "홈 화면 기본 정렬",
+  "translationSource": "번역 서비스",
+  "llmSettings": "LLM 설정",
+  "llmSettingsSubtitle": "API URL, 프로토콜, 키 및 모델",
+  "audioFormatPreference": "오디오 형식 우선순위",
+  "audioFormatSubtitle": "오디오 형식별 우선순위",
+  "audioTapPlaylistMode": "오디오 추가 방식",
+  "selectAudioTapPlaylistMode": "오디오를 눌렀을 때 플레이리스트에 추가할 방식을 선택하세요:",
+  "audioTapPlaylistModeReplace": "바꾸기",
+  "audioTapPlaylistModeReplaceDescription": "현재 플레이리스트를 선택한 파일이 있는 폴더의 재생 가능한 오디오 파일로 바꿉니다.",
+  "audioTapPlaylistModeAppendDirectory": "이어 붙이기",
+  "audioTapPlaylistModeAppendDirectoryDescription": "선택한 파일이 있는 폴더의 재생 가능한 오디오 파일을 추가합니다. 이미 있는 트랙은 중복으로 추가하지 않습니다.",
+  "audioTapPlaylistModeAppendSingle": "오디오 한 곡 추가",
+  "audioTapPlaylistModeAppendSingleDescription": "선택한 오디오 파일만 추가합니다. 이미 있는 트랙은 중복으로 추가하지 않습니다.",
+  "audioTapPlaylistModeAppendChip": "이어 붙이기",
+  "audioTapPlaylistModeAppendSingleChip": "오디오 한 곡 추가",
+  "preloadNextTitle": "다음 트랙 미리 불러오기",
+  "preloadNextSubtitle": "현재 트랙이 끝나기 전에 다음 트랙을 캐시에 미리 불러와 재생이 끊기지 않도록 합니다",
+  "selectPreloadThreshold": "현재 트랙의 남은 시간이 다음 기준보다 짧아지면 미리 불러옵니다:",
+  "preloadOptionOff": "사용 안 함",
+  "preloadOptionSeconds": "{seconds}초",
+  "@preloadOptionSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "preloadOptionCustom": "사용자 지정",
+  "preloadCustomInputTitle": "미리 불러올 시간 설정",
+  "preloadCustomInputHint": "초 (1~300)",
+  "preloadCustomInputRangeError": "1에서 300 사이의 숫자를 입력하세요",
+  "preloadCustomValueLabel": "{value}초",
+  "@preloadCustomValueLabel": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "keepScreenAwake": "화면 켜짐 유지",
+  "keepScreenAwakeDesc": "재생 중 화면이 꺼지지 않도록 합니다",
+  "audioHaptics": "오디오 햅틱 (베타)",
+  "audioHapticsDesc": "앱이 열린 동안 다운로드한 오디오에 맞춰 진동합니다",
+  "audioHapticsIntensity": "강도",
+  "audioGain": "전체 오디오 증폭",
+  "audioGainDesc": "0 dB는 원본 음량입니다. 지나치게 높이면 소리가 왜곡되거나 청력이 손상될 수 있습니다",
+  "audioGainAttenuationDesc": "모든 오디오 음량을 낮춥니다. 0 dB는 원본 음량입니다",
+  "audioGainPassthroughDesc": "오디오 패스스루를 사용 중일 때는 사용할 수 없습니다",
+  "blockingSettings": "차단 설정",
+  "blockingSettingsSubtitle": "차단한 태그, 성우, 서클을 관리합니다",
+  "audioPassthrough": "오디오 패스스루 (베타)",
+  "audioPassthroughDescWindows": "WASAPI 독점 출력을 사용합니다 (재시작 필요)",
+  "audioPassthroughDescMac": "CoreAudio 독점 출력을 사용합니다",
+  "audioPassthroughDisableDesc": "오디오 패스스루 모드를 끕니다",
+  "warning": "주의",
+  "audioPassthroughWarning": "이 기능은 충분히 테스트되지 않아 오디오가 예상과 다르게 출력될 수 있습니다. 사용 설정할까요?",
+  "exclusiveModeEnabled": "독점 모드를 사용 설정했습니다 (재시작 필요)",
+  "audioPassthroughEnabled": "오디오 패스스루 모드를 사용 설정했습니다",
+  "audioPassthroughDisabled": "오디오 패스스루 모드를 사용 중지했습니다",
+  "tagVoteSupport": "찬성",
+  "tagVoteOppose": "반대",
+  "tagVoted": "투표함",
+  "votedSupport": "찬성에 투표함",
+  "votedOppose": "반대에 투표함",
+  "voteCancelled": "투표를 취소했습니다",
+  "voteFailed": "투표에 실패했습니다: {error}",
+  "@voteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "blockThisTag": "이 태그 차단",
+  "copyTag": "태그 복사",
+  "addTag": "태그 추가",
+  "loadTagsFailed": "태그를 불러오지 못했습니다: {error}",
+  "@loadTagsFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "selectAtLeastOneTag": "태그를 하나 이상 선택하세요",
+  "tagSubmitSuccess": "태그를 제출했습니다. 서버에서 처리 중입니다",
+  "bindEmailFirst": "먼저 www.asmr.one에서 이메일을 연동하세요",
+  "selectedNTags": "태그 {count}개 선택:",
+  "@selectedNTags": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noMatchingTags": "일치하는 태그가 없습니다",
+  "loadFailedRetry": "불러오지 못했습니다. 눌러서 다시 시도하세요",
+  "refresh": "새로고침",
+  "playlistPrivacyPrivate": "비공개",
+  "playlistPrivacyUnlisted": "링크 공개",
+  "playlistPrivacyPublic": "전체 공개",
+  "systemPlaylistMarked": "내가 표시한 작품",
+  "systemPlaylistLiked": "내가 좋아요한 작품",
+  "totalNWorks": "작품 {count}개",
+  "@totalNWorks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pageNOfTotal": "{current}/{total}페이지",
+  "@pageNOfTotal": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "translateTitle": "번역",
+  "translateDescription": "설명 번역",
+  "translating": "번역 중...",
+  "translationFallbackNotice": "번역에 실패해 {source} 서비스로 자동 전환했습니다",
+  "@translationFallbackNotice": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "tagLabel": "태그",
+  "vaLabel": "성우",
+  "circleLabel": "서클",
+  "releaseDate": "발매일",
+  "ratingLabel": "평점",
+  "salesLabel": "판매량",
+  "priceLabel": "가격",
+  "durationLabel": "재생 시간",
+  "ageRatingLabel": "연령 등급",
+  "hasSubtitle": "자막 있음",
+  "noSubtitle": "자막 없음",
+  "description": "설명",
+  "fileList": "파일 목록",
+  "series": "시리즈",
+  "settingsLanguage": "언어",
+  "settingsLanguageSubtitle": "앱 표시 언어를 변경합니다",
+  "languageSystem": "시스템 설정 따르기",
+  "languageZh": "简体中文",
+  "languageZhTw": "繁體中文",
+  "languageEn": "English",
+  "languageJa": "日本語",
+  "languageRu": "Русский",
+  "languageKo": "한국어",
+  "themeModeDark": "다크 모드",
+  "themeModeLight": "라이트 모드",
+  "themeModeSystem": "시스템 설정 따르기",
+  "colorSchemeOceanBlue": "바다색",
+  "colorSchemeForestGreen": "숲속 초록",
+  "colorSchemeSunsetOrange": "노을 주황",
+  "colorSchemeLavenderPurple": "라벤더 보라",
+  "colorSchemeSakuraPink": "벚꽃 분홍",
+  "colorSchemeDynamic": "동적 색상",
+  "noData": "데이터가 없습니다",
+  "unknownError": "알 수 없는 오류",
+  "networkError": "네트워크 오류",
+  "timeout": "요청 시간 초과",
+  "playAll": "모두 재생",
+  "download": "다운로드",
+  "downloadAll": "모두 다운로드",
+  "downloading": "다운로드 중",
+  "downloadComplete": "다운로드 완료",
+  "downloadFailed": "다운로드에 실패했습니다",
+  "startDownload": "다운로드 시작 중",
+  "confirmDeleteDownload": "이 다운로드를 삭제할까요? 다운로드한 파일도 함께 삭제됩니다.",
+  "deletedSuccessfully": "삭제했습니다",
+  "scanSubtitleLibrary": "자막 보관함 검색",
+  "scanning": "검색 중...",
+  "scanComplete": "검색 완료",
+  "noSubtitleFiles": "자막 파일이 없습니다",
+  "subtitleFilesFound": "자막 파일 {count}개를 찾았습니다",
+  "@subtitleFilesFound": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "selectDirectory": "폴더 선택",
+  "privacyModeSettings": "프라이버시 모드 설정",
+  "blurCover": "표지 흐리게 하기",
+  "maskTitle": "제목 가리기",
+  "customTitle": "사용자 지정 제목",
+  "privacyModeDesc": "시스템 알림과 미디어 컨트롤에서 재생 정보를 숨깁니다",
+  "audioFormatSettingsTitle": "오디오 형식 설정",
+  "preferredFormat": "선호하는 형식",
+  "cacheSizeLimit": "캐시 용량 제한",
+  "llmApiUrl": "API URL",
+  "llmApiKey": "API 키",
+  "llmModel": "모델",
+  "llmPrompt": "시스템 프롬프트",
+  "llmConcurrency": "동시 요청 수",
+  "llmTestTranslation": "번역 테스트",
+  "llmTestSuccess": "테스트에 성공했습니다",
+  "llmTestFailed": "테스트에 실패했습니다",
+  "subtitleTimingAdjustment": "자막 싱크 조정",
+  "playerLyricStyle": "플레이어 가사 스타일",
+  "floatingLyricStyle": "플로팅 가사 스타일",
+  "fontSize": "글자 크기",
+  "fontColor": "글자 색상",
+  "backgroundColor": "배경색",
+  "transparency": "투명도",
+  "windowSize": "창 크기",
+  "playerButtonSettings": "플레이어 버튼 설정",
+  "showButton": "버튼 표시",
+  "buttonOrder": "버튼 순서",
+  "workCardDisplaySettings": "작품 카드 표시 설정",
+  "showTags": "태그 표시",
+  "showVa": "성우 표시",
+  "showRating": "평점 표시",
+  "showPrice": "가격 표시",
+  "cardSize": "카드 크기",
+  "compact": "작게",
+  "medium": "보통",
+  "full": "전체",
+  "workDetailDisplaySettings": "작품 상세 정보 표시 설정",
+  "infoSectionVisibility": "정보 항목 표시",
+  "imageSize": "이미지 크기",
+  "showMetadata": "메타데이터 표시",
+  "relatedRecommendations": "관련 작품",
+  "myTabsDisplaySettings": "내 정보 탭 설정",
+  "showTab": "탭 표시",
+  "tabOrder": "탭 순서",
+  "blockedItems": "차단 항목",
+  "blockedTags": "차단한 태그",
+  "blockedVas": "차단한 성우",
+  "blockedCircles": "차단한 서클",
+  "unblock": "차단 해제",
+  "noBlockedItems": "차단 항목이 없습니다",
+  "clearCache": "캐시 삭제",
+  "clearCacheConfirm": "캐시를 모두 삭제할까요?",
+  "cacheCleared": "캐시를 삭제했습니다",
+  "imagePreview": "이미지 미리보기",
+  "saveImage": "이미지 저장",
+  "imageSaved": "이미지를 저장했습니다",
+  "saveImageFailed": "저장에 실패했습니다",
+  "logout": "로그아웃",
+  "logoutConfirm": "로그아웃할까요?",
+  "openInBrowser": "브라우저에서 열기",
+  "copyLink": "링크 복사",
+  "linkCopied": "링크를 복사했습니다",
+  "ratingDistribution": "평점 분포",
+  "reviewsCount": "리뷰 {count}개",
+  "@reviewsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ratingsCount": "평점 {count}개",
+  "@ratingsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "myReviews": "내 리뷰",
+  "noReviews": "리뷰가 없습니다",
+  "writeReview": "리뷰 작성",
+  "editReview": "리뷰 수정",
+  "deleteReview": "리뷰 삭제",
+  "deleteReviewConfirm": "이 리뷰를 삭제할까요?",
+  "reviewDeleted": "리뷰를 삭제했습니다",
+  "reviewContent": "리뷰 내용",
+  "enterReviewContent": "리뷰 내용을 입력하세요...",
+  "submitReview": "제출",
+  "reviewSubmitted": "리뷰를 제출했습니다",
+  "reviewFailed": "리뷰 제출에 실패했습니다: {error}",
+  "@reviewFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPermission": "알림 권한",
+  "mediaPermission": "미디어 라이브러리 권한",
+  "storagePermission": "저장소 권한",
+  "granted": "허용됨",
+  "denied": "거부됨",
+  "requestPermission": "요청",
+  "localDownloads": "로컬 다운로드",
+  "offlinePlayback": "오프라인 재생",
+  "noDownloadedWorks": "다운로드한 작품이 없습니다",
+  "updateAvailable": "업데이트 있음",
+  "ignoreThisVersion": "이번 버전 건너뛰기",
+  "remindLater": "나중에 알림",
+  "updateNow": "지금 업데이트",
+  "fetchFailed": "가져오지 못했습니다",
+  "operationFailedWithError": "작업에 실패했습니다: {error}",
+  "@operationFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutSubtitle": "업데이트와 라이선스 등을 확인합니다",
+  "currentCacheSize": "현재 캐시 용량",
+  "cacheLimitLabelMB": "한도: {size}MB",
+  "@cacheLimitLabelMB": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "cacheUsagePercent": "사용량",
+  "autoCleanTitle": "자동 정리 안내",
+  "autoCleanDescription": "• 캐시가 한도를 초과하면 자동으로 정리합니다\n• 캐시가 한도의 80%가 될 때까지 삭제합니다\n• 최근에 사용하지 않은 항목부터 삭제합니다 (LRU)",
+  "autoCleanDescriptionShort": "• 캐시가 한도를 초과하면 자동으로 정리합니다\n• 캐시가 한도의 80%가 될 때까지 삭제합니다",
+  "confirmClear": "삭제 확인",
+  "confirmClearCacheMessage": "캐시를 모두 삭제할까요? 이 작업은 되돌릴 수 없습니다.",
+  "clearCacheFailedWithError": "캐시를 삭제하지 못했습니다: {error}",
+  "@clearCacheFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "hasNewVersion": "새 버전",
+  "themeMode": "테마 모드",
+  "colorTheme": "테마 색상",
+  "themePreview": "테마 미리보기",
+  "themeModeSystemDesc": "시스템의 다크 모드 설정을 따릅니다",
+  "themeModeLightDesc": "항상 라이트 테마를 사용합니다",
+  "themeModeDarkDesc": "항상 다크 테마를 사용합니다",
+  "colorSchemeOceanBlueDesc": "파랑, 파랑, 또 파랑!",
+  "colorSchemeSakuraPinkDesc": "( ゜- ゜)つロ 건배~",
+  "colorSchemeSunsetOrangeDesc": "테마 색상은 필수 ✍🏻✍🏻✍🏻",
+  "colorSchemeLavenderPurpleDesc": "친구, 친구...",
+  "colorSchemeForestGreenDesc": "초록, 초록, 또 초록",
+  "colorSchemeDynamicDesc": "시스템 배경화면 색상을 사용합니다 (Android 12 이상)",
+  "primaryContainer": "기본 컨테이너",
+  "secondaryContainer": "보조 컨테이너",
+  "tertiaryContainer": "세 번째 컨테이너",
+  "surfaceColor": "표면 색상",
+  "playerButtonSettingsSubtitle": "플레이어 버튼 순서",
+  "playerLyricStyleSubtitle": "미니 및 전체 화면 가사 스타일",
+  "workDetailDisplaySubtitle": "상세 페이지 콘텐츠",
+  "workCardDisplaySubtitle": "작품 카드 콘텐츠",
+  "myTabsDisplaySubtitle": "내 정보에 표시할 탭",
+  "pageSizeSettings": "페이지당 항목 수",
+  "pageSizeCurrent": "페이지당 {size}개",
+  "@pageSizeCurrent": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "currentSettingLabel": "현재 설정: {value}",
+  "@currentSettingLabel": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "setToValue": "설정값: {value}",
+  "@setToValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "llmConfigRequiredMessage": "LLM 번역을 사용하려면 API 키가 필요합니다. 먼저 설정에서 입력하세요.",
+  "autoSwitchedToLlm": "LLM 번역으로 자동 전환했습니다",
+  "translationDescGoogle": "Google 서비스를 사용합니다",
+  "translationDescYoudao": "현재 네트워크를 사용합니다",
+  "translationDescMicrosoft": "현재 네트워크를 사용합니다",
+  "translationDescLlm": "OpenAI 호환 API가 필요합니다",
+  "audioPassthroughDescAndroid": "AC3/DTS 오디오 원본을 외부 디코더로 전송합니다",
+  "permissionExplanation": "권한 안내",
+  "backgroundRunningPermission": "백그라운드 실행 권한",
+  "notificationPermissionDesc": "미디어 재생 알림을 표시하고 잠금 화면과 알림 창에서 재생을 제어하는 데 사용합니다.",
+  "backgroundRunningPermissionDesc": "백그라운드에서 오디오가 계속 재생되도록 배터리 최적화 대상에서 제외합니다.",
+  "notificationGrantedStatus": "허용됨 - 재생 알림과 제어 버튼을 표시할 수 있습니다",
+  "notificationDeniedStatus": "허용되지 않음 - 눌러서 권한을 요청하세요",
+  "backgroundGrantedStatus": "허용됨 - 앱이 백그라운드에서 계속 실행됩니다",
+  "backgroundDeniedStatus": "허용되지 않음 - 눌러서 권한을 요청하세요",
+  "notificationPermissionGranted": "알림 권한을 허용했습니다",
+  "notificationPermissionDenied": "알림 권한이 거부되었습니다",
+  "requestNotificationFailed": "알림 권한을 요청하지 못했습니다: {error}",
+  "@requestNotificationFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "backgroundPermissionGranted": "백그라운드 실행 권한을 허용했습니다",
+  "backgroundPermissionDenied": "백그라운드 실행 권한이 거부되었습니다",
+  "requestBackgroundFailed": "백그라운드 실행 권한을 요청하지 못했습니다: {error}",
+  "@requestBackgroundFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "permissionRequired": "{permission} 필요",
+  "@permissionRequired": {
+    "placeholders": {
+      "permission": {
+        "type": "String"
+      }
+    }
+  },
+  "permissionPermanentlyDenied": "{permission}이(가) 영구적으로 거부되었습니다. 시스템 설정에서 직접 허용하세요.",
+  "@permissionPermanentlyDenied": {
+    "placeholders": {
+      "permission": {
+        "type": "String"
+      }
+    }
+  },
+  "openSettings": "설정 열기",
+  "permissionsAndroidOnly": "권한 관리는 Android에서만 사용할 수 있습니다",
+  "permissionsNotNeeded": "다른 플랫폼에서는 권한을 직접 관리할 필요가 없습니다",
+  "refreshPermissionStatus": "권한 상태 새로고침",
+  "deleteFileConfirm": "\"{fileName}\" 파일을 삭제할까요?",
+  "@deleteFileConfirm": {
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteSelectedFilesConfirm": "선택한 파일 {count}개를 삭제할까요?",
+  "@deleteSelectedFilesConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deleted": "삭제됨",
+  "cannotOpenFolder": "폴더를 열 수 없습니다: {path}",
+  "@cannotOpenFolder": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "openFolderFailed": "폴더를 열지 못했습니다: {error}",
+  "@openFolderFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "reloadingFromDisk": "디스크에서 다시 불러오는 중...",
+  "refreshComplete": "새로고침 완료",
+  "refreshFailed": "새로고침에 실패했습니다: {error}",
+  "@refreshFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteSelectedWorksConfirm": "선택한 작품 {count}개를 삭제할까요?",
+  "@deleteSelectedWorksConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "partialDeleteFailed": "일부 항목을 삭제하지 못했습니다: {error}",
+  "@partialDeleteFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "deletedNOfTotal": "작업 {total}개 중 {success}개를 삭제했습니다",
+  "@deletedNOfTotal": {
+    "placeholders": {
+      "success": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "deleteFailedWithError": "삭제에 실패했습니다: {error}",
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noWorkMetadataForOffline": "저장된 작품 정보가 없어 오프라인에서 볼 수 없습니다",
+  "openWorkDetailFailed": "작품 상세 정보를 열지 못했습니다: {error}",
+  "@openWorkDetailFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noLocalDownloads": "로컬 다운로드 항목이 없습니다",
+  "exitSelection": "선택 모드 종료",
+  "reload": "다시 불러오기",
+  "openFolder": "폴더 열기",
+  "playlistLink": "플레이리스트 링크",
+  "playlistLinkHint": "플레이리스트 링크를 붙여 넣으세요. 예:\nhttps://www.asmr.one/playlist?id=...",
+  "unrecognizedPlaylistLink": "플레이리스트 링크 또는 ID를 인식할 수 없습니다",
+  "addingPlaylist": "플레이리스트 추가 중...",
+  "playlistAddedSuccess": "플레이리스트를 추가했습니다",
+  "addFailed": "추가하지 못했습니다",
+  "playlistNotFound": "플레이리스트가 없거나 삭제되었습니다",
+  "noPermissionToAccessPlaylist": "이 플레이리스트에 접근할 권한이 없습니다",
+  "networkConnectionFailed": "네트워크에 연결할 수 없습니다. 네트워크를 확인하세요",
+  "addFailedWithError": "추가에 실패했습니다: {error}",
+  "@addFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "creatingPlaylist": "플레이리스트 만드는 중...",
+  "playlistCreatedSuccess": "플레이리스트 \"{name}\"을(를) 만들었습니다",
+  "@playlistCreatedSuccess": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "createFailedWithError": "만들지 못했습니다: {error}",
+  "@createFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noPlaylists": "플레이리스트가 없습니다",
+  "noPlaylistsDescription": "아직 만든 플레이리스트나 즐겨찾기에 추가한 플레이리스트가 없습니다",
+  "myPlaylists": "내 플레이리스트",
+  "totalNItems": "총 {count}개 항목",
+  "@totalNItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "systemPlaylistCannotDelete": "시스템 플레이리스트는 삭제할 수 없습니다",
+  "deletePlaylist": "플레이리스트 삭제",
+  "unfavoritePlaylist": "즐겨찾기 해제",
+  "deletePlaylistConfirm": "삭제하면 되돌릴 수 없습니다. 이 플레이리스트를 즐겨찾기한 사용자도 더 이상 이용할 수 없습니다. 삭제할까요?",
+  "unfavoritePlaylistConfirm": "\"{name}\"을(를) 즐겨찾기에서 삭제할까요?",
+  "@unfavoritePlaylistConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "unfavorite": "즐겨찾기 해제",
+  "deleting": "삭제 중...",
+  "deleteSuccess": "삭제했습니다",
+  "onlyOwnerCanEdit": "플레이리스트 소유자만 수정할 수 있습니다",
+  "editPlaylist": "플레이리스트 수정",
+  "playlistNameRequired": "플레이리스트 이름을 입력하세요",
+  "privacyDescPrivate": "나만 볼 수 있습니다",
+  "privacyDescUnlisted": "링크가 있는 사람만 볼 수 있습니다",
+  "privacyDescPublic": "누구나 볼 수 있습니다",
+  "addWorks": "작품 추가",
+  "addWorksInputHint": "작품 ID가 포함된 텍스트를 입력하세요. RJ 번호는 자동으로 찾습니다",
+  "workId": "작품 ID",
+  "workIdHint": "예: RJ123456\nrj233333",
+  "detectedNWorkIds": "작품 ID {count}개를 찾았습니다",
+  "@detectedNWorkIds": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "addNWorks": "{count}개 추가",
+  "@addNWorks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noValidWorkIds": "유효한 작품 ID가 없습니다 (RJ로 시작해야 합니다)",
+  "addingNWorks": "작품 {count}개 추가 중...",
+  "@addingNWorks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "addedNWorksSuccess": "작품 {count}개를 추가했습니다",
+  "@addedNWorksSuccess": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "removeWork": "작품 제거",
+  "removeWorkConfirm": "플레이리스트에서 \"{title}\"을(를) 제거할까요?",
+  "@removeWorkConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "removeSuccess": "제거했습니다",
+  "removeFailedWithError": "제거에 실패했습니다: {error}",
+  "@removeFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "saving": "저장 중...",
+  "saveSuccess": "저장했습니다",
+  "saveFailedWithError": "저장에 실패했습니다: {error}",
+  "@saveFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noWorks": "작품이 없습니다",
+  "playlistNoWorksDescription": "아직 이 플레이리스트에 추가된 작품이 없습니다",
+  "lastUpdated": "최근 수정",
+  "createdTime": "만든 날짜",
+  "nWorksCount": "작품 {count}개",
+  "@nWorksCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "nPlaysCount": "재생 {count}회",
+  "@nPlaysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "removeFromPlaylist": "플레이리스트에서 제거",
+  "checkNetworkOrRetry": "네트워크 연결을 확인하거나 나중에 다시 시도하세요",
+  "reachedEnd": "마지막 항목입니다~",
+  "excludedNWorks": "작품 {count}개 제외됨",
+  "@excludedNWorks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pageExcludedNWorks": "이 페이지에서 작품 {count}개 제외됨",
+  "@pageExcludedNWorks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noSubtitlesAvailable": "사용할 수 있는 자막이 없습니다",
+  "translateLyrics": "가사 번역",
+  "fullscreenLyrics": "전체 화면 가사",
+  "showOriginalLyrics": "원문 표시",
+  "showTranslatedLyrics": "번역문 표시",
+  "translatingLyrics": "가사 번역 중...",
+  "lyricTranslationFailed": "가사 번역에 실패했습니다",
+  "lyricTranslationConfirmMessage": "현재 재생 중인 가사를 번역해 바로 표시합니다. 자동 저장을 켜면 자막 보관함의 같은 이름을 가진 .lrc 파일을 덮어씁니다. 번역 중 트랙을 바꾸면 결과가 폐기됩니다.",
+  "unlock": "잠금 해제",
+  "backToCover": "표지로 돌아가기",
+  "lyricHintTapCover": "표지나 제목을 눌러 자막 화면으로 이동합니다",
+  "floatingSubtitle": "플로팅 자막",
+  "playlistEmpty": "플레이리스트가 비어 있습니다",
+  "gotIt": "확인",
+  "nMinutes": "{count}분",
+  "@nMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "nHours": "{count}시간",
+  "@nHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "titleLabel": "제목",
+  "rjNumberLabel": "RJ 번호",
+  "workIdLabel": "작품 ID",
+  "tapToViewRatingDetail": "눌러서 평점 상세 정보 보기",
+  "priceInYen": "{price}엔",
+  "@priceInYen": {
+    "placeholders": {
+      "price": {
+        "type": "int"
+      }
+    }
+  },
+  "soldCount": "판매: {count}",
+  "@soldCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "circleAndVaSection": "서클 | 성우",
+  "subtitleBadge": "자막",
+  "otherEditions": "다른 에디션",
+  "tenThousandSuffix": "{count}만",
+  "@tenThousandSuffix": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "packingWork": "작품을 압축하는 중...",
+  "workDirectoryNotExist": "작품 폴더가 없습니다",
+  "packingFailed": "압축하지 못했습니다",
+  "exportSuccess": "내보냈습니다: {path}",
+  "@exportSuccess": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "내보내지 못했습니다: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "exportAsZip": "ZIP으로 내보내기",
+  "offlineBadge": "오프라인",
+  "loadFilesFailed": "파일을 불러오지 못했습니다: {error}",
+  "@loadFilesFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "unknown": "알 수 없음",
+  "noPlayableAudioFiles": "재생할 수 있는 오디오 파일이 없습니다",
+  "cannotFindAudioFile": "오디오 파일을 찾을 수 없습니다: {title}",
+  "@cannotFindAudioFile": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "nowPlayingNOfTotal": "재생 중: {title} ({current}/{total})",
+  "@nowPlayingNOfTotal": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "noAudioCannotLoadSubtitle": "재생 중인 오디오가 없어 자막을 불러올 수 없습니다",
+  "loadSubtitle": "자막 불러오기",
+  "loadSubtitleConfirm": "현재 오디오의 자막으로 이 파일을 불러올까요?",
+  "subtitleFile": "자막 파일",
+  "currentAudio": "현재 오디오",
+  "subtitleAutoRestoreNote": "오디오를 바꾸면 자막이 기본 자동 매칭으로 돌아갑니다",
+  "confirmLoad": "불러오기 확인",
+  "loadingSubtitle": "자막 불러오는 중...",
+  "subtitleLoadSuccess": "자막을 불러왔습니다: {title}",
+  "@subtitleLoadSuccess": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "subtitleLoadFailed": "자막을 불러오지 못했습니다: {error}",
+  "@subtitleLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "cannotPreviewImageMissingInfo": "이미지를 미리 볼 수 없습니다: 필수 정보가 없습니다",
+  "cannotFindImageFile": "이미지 파일을 찾을 수 없습니다",
+  "cannotPreviewTextMissingInfo": "텍스트를 미리 볼 수 없습니다: 필수 정보가 없습니다",
+  "cannotPreviewPdfMissingInfo": "PDF를 미리 볼 수 없습니다: 필수 정보가 없습니다",
+  "cannotPlayVideoMissingId": "동영상을 재생할 수 없습니다: 파일 ID가 없습니다",
+  "cannotPlayVideoMissingParams": "동영상을 재생할 수 없습니다: 필수 매개변수가 없습니다",
+  "cannotPlayDirectly": "바로 재생할 수 없습니다",
+  "noVideoPlayerFound": "이 기기에서 사용할 수 있는 동영상 플레이어가 없습니다.",
+  "youCan": "다음 방법을 사용할 수 있습니다:",
+  "copyLinkToExternalPlayer": "1. 링크를 복사해 외부 플레이어에서 엽니다 (예: MX Player, VLC)",
+  "openInBrowserOption": "2. 브라우저에서 엽니다",
+  "playVideoError": "동영상 재생 오류: {error}",
+  "@playVideoError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noFiles": "파일이 없습니다",
+  "resourceFiles": "리소스 파일",
+  "resourceFilesTranslated": "리소스 파일 (항목 {count}개 번역됨)",
+  "@resourceFilesTranslated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "translationOriginal": "원문",
+  "translationTranslated": "번역",
+  "copiedName": "이름을 복사했습니다: {title}",
+  "@copiedName": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "translationComplete": "번역 완료: 항목 {count}개",
+  "@translationComplete": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noContentToTranslate": "번역할 내용이 없습니다",
+  "preparingTranslation": "번역 준비 중...",
+  "translatingProgress": "번역 중 {current}/{total}",
+  "@translatingProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "nItems": "항목 {count}개",
+  "@nItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loadAsSubtitle": "자막으로 불러오기",
+  "preview": "미리보기",
+  "openVideoFileError": "동영상 파일을 여는 중 오류가 발생했습니다: {error}",
+  "@openVideoFileError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "cannotOpenVideoFile": "동영상 파일을 열 수 없습니다: {message}",
+  "@cannotOpenVideoFile": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "noFileTreeInfo": "파일 목록 정보가 없습니다",
+  "workFolderNotExist": "작품 폴더가 없습니다",
+  "cannotPlayAudioMissingId": "오디오를 재생할 수 없습니다: 파일 ID가 없습니다",
+  "audioFileNotExist": "오디오 파일이 없습니다",
+  "noPreviewableImages": "미리 볼 수 있는 이미지가 없습니다",
+  "cannotPreviewTextMissingId": "텍스트를 미리 볼 수 없습니다: 파일 ID가 없습니다",
+  "cannotFindFilePath": "파일 경로를 찾을 수 없습니다",
+  "fileNotExist": "파일이 없습니다: {title}",
+  "@fileNotExist": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "cannotPreviewPdfMissingId": "PDF를 미리 볼 수 없습니다: 파일 ID가 없습니다",
+  "videoFileNotExist": "동영상 파일이 없습니다",
+  "cannotOpenVideo": "동영상을 열 수 없습니다",
+  "errorInfo": "오류: {message}",
+  "@errorInfo": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "installVideoPlayerApp": "동영상 플레이어 앱을 설치하세요 (예: VLC, MX Player)",
+  "filePathLabel": "파일 경로:",
+  "noDownloadedFiles": "다운로드한 파일이 없습니다",
+  "offlineFiles": "오프라인 파일",
+  "unsupportedFileType": "지원하지 않는 파일 형식입니다: {title}",
+  "@unsupportedFileType": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteFilePrompt": "이 파일을 삭제할까요?",
+  "deletedItem": "삭제했습니다: {title}",
+  "@deletedItem": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "selectAtLeastOneFile": "파일을 하나 이상 선택하세요",
+  "addedNFilesToDownloadQueue": "파일 {count}개를 다운로드 대기열에 추가했습니다",
+  "@addedNFilesToDownloadQueue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadedAndSelected": "다운로드 {downloaded}개 · 선택 {selected}개",
+  "@downloadedAndSelected": {
+    "placeholders": {
+      "downloaded": {
+        "type": "int"
+      },
+      "selected": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadN": "다운로드 ({count})",
+  "@downloadN": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "checkingDownloadedFiles": "다운로드한 파일 확인 중...",
+  "noDownloadableFiles": "다운로드할 수 있는 파일이 없습니다",
+  "selectFilesToDownload": "다운로드할 파일 선택",
+  "downloadedNCount": "다운로드 {count}개",
+  "@downloadedNCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "selectedNCount": "{count}개 선택",
+  "@selectedNCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pleaseEnterServerAddress": "서버 주소를 입력하세요",
+  "pleaseEnterUsername": "사용자 이름을 입력하세요",
+  "pleaseEnterPassword": "비밀번호를 입력하세요",
+  "notTestedYet": "아직 테스트하지 않았습니다",
+  "latencyResultDetail": "응답 시간 {latency} ({status})",
+  "@latencyResultDetail": {
+    "placeholders": {
+      "latency": {
+        "type": "String"
+      },
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "connectionFailedWithDetail": "연결에 실패했습니다: {error}",
+  "@connectionFailedWithDetail": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noAccountTapToRegister": "계정이 없나요? 눌러서 가입하세요",
+  "haveAccountTapToLogin": "계정이 있나요? 눌러서 로그인하세요",
+  "cannotDeleteActiveAccount": "현재 사용 중인 계정은 삭제할 수 없습니다",
+  "selectAccount": "계정 선택",
+  "noSavedAccounts": "저장된 계정이 없습니다",
+  "addAccountToGetStarted": "계정을 추가해 시작하세요",
+  "unknownHost": "알 수 없는 호스트",
+  "lastUsedTime": "최근 사용: {time}",
+  "@lastUsedTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "daysAgo": "{count}일 전",
+  "@daysAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursAgo": "{count}시간 전",
+  "@hoursAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesAgo": "{count}분 전",
+  "@minutesAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "justNow": "방금",
+  "confirmDelete": "삭제 확인",
+  "deleteSelectedConfirm": "선택한 항목 {count}개를 삭제할까요?",
+  "@deleteSelectedConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deletedNOfTotalItems": "항목 {total}개 중 {success}개를 삭제했습니다",
+  "@deletedNOfTotalItems": {
+    "placeholders": {
+      "success": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "importingSubtitleFile": "자막 파일 가져오는 중...",
+  "preparingImport": "가져오기 준비 중...",
+  "preparingExtract": "압축 풀기 준비 중...",
+  "importSubtitleFile": "자막 파일 가져오기",
+  "supportedSubtitleFormats": ".srt, .vtt, .lrc 및 기타 자막 형식을 지원합니다",
+  "importFolder": "폴더 가져오기",
+  "importFolderDesc": "폴더 구조를 유지하고 자막 파일만 가져옵니다",
+  "importArchive": "압축 파일 가져오기",
+  "importArchiveDesc": "암호가 없는 ZIP 압축 파일을 지원합니다.\n여러 파일을 한 번에 가져오려면 하나의 압축 파일로 묶으세요.",
+  "subtitleLibraryGuide": "자막 보관함 사용 안내",
+  "subtitleLibraryFunction": "자막 보관함 기능",
+  "subtitleLibraryFunctionDesc": "가져오거나 저장한 자막 파일을 보관하며 재생 중 자동 또는 수동으로 불러올 수 있습니다",
+  "subtitleAutoLoad": "자막 자동 불러오기",
+  "subtitleAutoLoadDesc": "오디오를 재생하면 일치하는 자막을 자동으로 검색합니다:",
+  "smartCategoryAndMark": "자동 분류 및 표시",
+  "open": "열기",
+  "moveTo": "이동",
+  "rename": "이름 변경",
+  "newName": "새 이름",
+  "renameSuccess": "이름을 변경했습니다",
+  "renameFailed": "이름을 변경하지 못했습니다",
+  "deleteItemConfirm": "\"{title}\"을(를) 삭제할까요?",
+  "@deleteItemConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteFolderContentsWarning": "폴더 안의 모든 항목이 삭제됩니다.",
+  "deleteFailed": "삭제하지 못했습니다",
+  "subtitleLoaded": "자막을 불러왔습니다: {title}",
+  "@subtitleLoaded": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "moveSuccess": "이동했습니다",
+  "moveFailed": "이동하지 못했습니다",
+  "previewFailed": "미리보기에 실패했습니다: {error}",
+  "@previewFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "openFailed": "열지 못했습니다: {error}",
+  "@openFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "back": "뒤로",
+  "subtitleLibraryEmpty": "자막 보관함이 비어 있습니다",
+  "tapToImportSubtitle": "+ 버튼을 눌러 자막을 가져오세요",
+  "importSubtitle": "자막 가져오기",
+  "sampleSubtitleContent": "♪ 샘플 자막 내용 ♪",
+  "presetStyles": "미리 설정된 스타일",
+  "backgroundOpacity": "배경 투명도",
+  "colorSettings": "색상 설정",
+  "shapeSettings": "모양 설정",
+  "cornerRadius": "모서리 둥글기",
+  "horizontalPadding": "가로 여백",
+  "verticalPadding": "세로 여백",
+  "resetStyle": "스타일 초기화",
+  "resetStyleConfirm": "기본 스타일로 되돌릴까요?",
+  "restoreDefaultStyle": "기본 스타일 복원",
+  "reset": "초기화",
+  "noBlockedItemsOfType": "차단 목록에 {type}이(가) 없습니다",
+  "@noBlockedItemsOfType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "unblockedItem": "차단 해제: {item}",
+  "@unblockedItem": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
+  "addBlockedItem": "차단할 {type} 추가",
+  "@addBlockedItem": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "blockedItemName": "{type} 이름",
+  "@blockedItemName": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "enterBlockedItemHint": "차단할 {type} 입력",
+  "@enterBlockedItemHint": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "blockedItemAdded": "차단됨: {item}",
+  "@blockedItemAdded": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
+  "workCountLabel": "작품: {count}",
+  "@workCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "miniPlayer": "미니 플레이어",
+  "lineHeight": "줄 간격",
+  "portraitPlayerBelowCover": "세로형 플레이어 (표지 아래)",
+  "fullscreenSubtitleMode": "전체 화면 자막 (세로/가로)",
+  "activeSubtitleFontSize": "현재 자막 글자 크기",
+  "inactiveSubtitleFontSize": "이전 자막 글자 크기",
+  "restoreDefaultSettings": "기본 설정 복원",
+  "confirmRestoreDefaultSettings": "기본 설정을 복원할까요?",
+  "guideInPrefix": "폴더 안의 ",
+  "guideParsedFolder": "<Parsed>",
+  "guideFindWorkDesc": "에서 일치하는 작품 찾기\n지원하는 폴더 형식: RJ123456",
+  "guideSavedFolder": "<Saved>",
+  "guideFindSubtitleDesc": "에서 개별 자막 파일 찾기",
+  "guideMatchRule": "매칭 규칙: 자막 파일 이름이 오디오 파일 이름과 일치해야 합니다 (오디오 확장자 포함 여부 무관)",
+  "guideRecognizedWorkPrefix": "인식된 작품에는 초록색 ",
+  "guideTagSuffix": " 태그가 표시되고, 오디오 파일 아이콘에는 ",
+  "guideSubtitleMatchSuffix": " 표시가 나타나 자막 보관함에서 일치 항목을 찾았음을 알립니다",
+  "guideAutoRecognizeRJ": "가져올 때 RJ 형식을 자동으로 인식해 <Parsed>에 분류합니다",
+  "guideAutoAddRJPrefix": "숫자로만 된 폴더 이름에는 RJ가 자동으로 붙습니다 (예: 123456 → RJ123456)",
+  "unknownFile": "알 수 없는 파일",
+  "deleteWithCount": "삭제 ({count})",
+  "@deleteWithCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchSubtitles": "자막 검색...",
+  "nFilesWithSize": "파일 {count}개 • {size}",
+  "@nFilesWithSize": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "rootDirectory": "루트 폴더",
+  "goToParent": "상위 폴더로 이동",
+  "moveToTarget": "이동 위치: {name}",
+  "@moveToTarget": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "noSubfoldersHere": "이 폴더에 하위 폴더가 없습니다",
+  "addedToPlaylist": "플레이리스트 \"{name}\"에 추가했습니다",
+  "@addedToPlaylist": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removedFromPlaylist": "플레이리스트 \"{name}\"에서 제거했습니다",
+  "@removedFromPlaylist": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "alreadyFavorited": "즐겨찾기에 추가됨",
+  "loadImageFailedWithError": "이미지를 불러오지 못했습니다\n{error}",
+  "@loadImageFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noImageAvailable": "사용할 수 있는 이미지가 없습니다",
+  "storagePermissionRequiredForImage": "이미지를 저장하려면 저장소 권한이 필요합니다",
+  "savedToGallery": "갤러리에 저장했습니다",
+  "saveCoverImage": "표지 이미지 저장",
+  "savedToPath": "저장 위치: {path}",
+  "@savedToPath": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "doubleTapToZoom": "두 번 눌러 확대 · 핀치하여 크기 조절",
+  "getStatusFailed": "상태를 가져오지 못했습니다: {error}",
+  "@getStatusFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteRecord": "기록 삭제",
+  "deletePlayRecordConfirm": "\"{title}\"의 재생 기록을 삭제할까요?",
+  "@deletePlayRecordConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notPlayedYet": "아직 재생하지 않았습니다",
+  "playbackFailed": "재생에 실패했습니다: {error}",
+  "@playbackFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "storagePermissionRequired": "저장소 권한 필요",
+  "storagePermissionForGalleryDesc": "이미지를 저장하려면 사진 갤러리 접근 권한이 필요합니다. 설정에서 권한을 허용하세요.",
+  "goToSettings": "설정으로 이동",
+  "imageSavedToGallery": "이미지를 갤러리에 저장했습니다",
+  "imageSavedToPath": "이미지 저장 위치: {path}",
+  "@imageSavedToPath": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "pullDownForNextPage": "아래로 당겨 다음 페이지로 이동",
+  "releaseForNextPage": "손을 떼면 다음 페이지로 이동",
+  "jumpTo": "이동",
+  "goToPageTitle": "페이지 이동",
+  "pageNumberRange": "페이지 (1~{max})",
+  "@pageNumberRange": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "enterPageNumber": "페이지 번호 입력",
+  "enterValidPageNumber": "올바른 페이지 번호를 입력하세요 (1~{max})",
+  "@enterValidPageNumber": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "previousPage": "이전",
+  "nextPage": "다음",
+  "localPdfNotExist": "로컬 PDF 파일이 없습니다",
+  "cannotOpenPdf": "PDF 파일을 열 수 없습니다",
+  "loadPdfFailed": "PDF를 불러오지 못했습니다: {error}",
+  "@loadPdfFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfPageOfTotal": "{current}/{total}페이지",
+  "@pdfPageOfTotal": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "loadingPdf": "PDF 불러오는 중...",
+  "pdfPathInvalid": "PDF 파일 경로가 올바르지 않습니다",
+  "desktopPdfPreviewNotSupported": "데스크톱에서는 아직 PDF 미리보기를 지원하지 않습니다",
+  "openWithSystemApp": "기본 시스템 앱으로 열기",
+  "renderPdfFailed": "PDF를 표시하지 못했습니다: {error}",
+  "@renderPdfFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "ratingDetails": "평점 상세 정보",
+  "selectSaveDirectory": "저장 폴더 선택",
+  "noSubtitleContentToSave": "저장할 자막 내용이 없습니다",
+  "savedToSubtitleLibrary": "자막 보관함에 저장했습니다",
+  "translatedLyricsNotSaved": "번역이 완료되었습니다. 현재 재생 중에만 표시됩니다.",
+  "saveToLocal": "기기에 저장",
+  "selectDirectoryToSaveFile": "파일을 저장할 폴더를 선택하세요",
+  "saveToSubtitleLibrary": "자막 보관함에 저장",
+  "saveToSubtitleLibraryDesc": "자막 보관함의 \"Saved\" 폴더에 저장합니다",
+  "saveToFile": "파일로 저장",
+  "noContentToSave": "저장할 내용이 없습니다",
+  "fileSavedToPath": "파일 저장 위치: {path}",
+  "@fileSavedToPath": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "localFileNotExist": "로컬 파일이 없습니다. 다시 불러오세요",
+  "loadTextFailed": "텍스트를 불러오지 못했습니다: {error}",
+  "@loadTextFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "previewMode": "미리보기 모드",
+  "editMode": "편집 모드",
+  "showOriginal": "원문 표시",
+  "translateContent": "내용 번역",
+  "editTextContentHint": "텍스트 내용 수정...",
+  "markButton": "표시",
+  "bookmarkRemoved": "북마크를 삭제했습니다",
+  "setProgressAndRating": "{progress}(으)로 설정, 평점 {rating}점",
+  "@setProgressAndRating": {
+    "placeholders": {
+      "progress": {
+        "type": "String"
+      },
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "setProgressTo": "{progress}(으)로 설정",
+  "@setProgressTo": {
+    "placeholders": {
+      "progress": {
+        "type": "String"
+      }
+    }
+  },
+  "ratingSetTo": "평점을 {rating}점으로 설정했습니다",
+  "@ratingSetTo": {
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      }
+    }
+  },
+  "updated": "업데이트됨",
+  "addTagFailed": "태그를 추가하지 못했습니다: {error}",
+  "@addTagFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "addWithCount": "추가 ({count})",
+  "@addWithCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "undo": "실행 취소",
+  "nStars": "별 {count}개",
+  "@nStars": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "voteRemoved": "투표를 취소했습니다",
+  "votedUp": "찬성에 투표함",
+  "votedDown": "반대에 투표함",
+  "voteFailedWithError": "투표에 실패했습니다: {error}",
+  "@voteFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "voteFor": "찬성",
+  "voteAgainst": "반대",
+  "voted": "투표함",
+  "tagBlockedWithName": "태그 차단됨: {name}",
+  "@tagBlockedWithName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "subtitleParseFailedUnsupportedFormat": "지원하지 않는 형식이라 파싱하지 못했습니다",
+  "lyricPresetDynamic": "동적",
+  "lyricPresetClassic": "클래식",
+  "lyricPresetModern": "모던",
+  "lyricPresetMinimal": "미니멀",
+  "lyricPresetVibrant": "생동감",
+  "lyricPresetElegant": "우아함",
+  "lyricPresetDynamicDesc": "시스템 테마와 색상을 따릅니다",
+  "lyricPresetClassicDesc": "검은 배경과 흰 글자의 클래식 스타일",
+  "lyricPresetModernDesc": "그라데이션 배경의 세련된 모던 스타일",
+  "lyricPresetMinimalDesc": "밝고 투명한 간결한 스타일",
+  "lyricPresetVibrantDesc": "선명하고 활기찬 색상",
+  "lyricPresetElegantDesc": "짙은 파란색의 세련된 스타일",
+  "floatingLyricLoading": "♪ 자막 불러오는 중 ♪",
+  "subtitleFileNotExist": "파일이 없습니다",
+  "subtitleMissingInfo": "필수 정보가 없습니다",
+  "privacyDefaultTitle": "오디오 재생 중",
+  "offlineModeStartup": "네트워크에 연결할 수 없어 오프라인 모드로 시작합니다",
+  "playlistInfoNotLoaded": "플레이리스트 정보를 불러오지 못했습니다",
+  "encodingUnrecognized": "파일 인코딩을 인식할 수 없어 내용을 올바르게 표시할 수 없습니다",
+  "editPlaylistFailed": "플레이리스트를 수정하지 못했습니다: {error}",
+  "@editPlaylistFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "unsupportedFileTypeWithTitle": "이 파일 형식은 열 수 없습니다: {title}",
+  "@unsupportedFileTypeWithTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsSaved": "설정을 저장했습니다",
+  "restoredToDefault": "기본 설정으로 복원했습니다",
+  "restoreDefault": "기본값 복원",
+  "saveSettings": "설정 저장",
+  "addAtLeastOneSearchCondition": "검색 조건을 하나 이상 추가하세요",
+  "privacyModeSettingsTitle": "프라이버시 모드 설정",
+  "whatIsPrivacyMode": "프라이버시 모드란?",
+  "privacyModeDescription": "사용 설정하면 시스템 알림, 잠금 화면 등에 표시되는 재생 정보를 흐리게 처리해 개인정보를 보호합니다.",
+  "enablePrivacyMode": "프라이버시 모드 사용",
+  "privacyModeEnabledSubtitle": "사용 중 - 재생 정보가 숨겨집니다",
+  "privacyModeDisabledSubtitle": "사용 안 함 - 재생 정보가 그대로 표시됩니다",
+  "blurOptions": "흐리게 표시할 항목",
+  "blurNotificationCover": "알림 표지 흐리게 하기",
+  "blurNotificationCoverSubtitle": "시스템 알림, 잠금 화면 또는 컨트롤 센터의 표지를 흐리게 표시합니다",
+  "blurInAppCover": "앱 내 표지 흐리게 하기",
+  "blurInAppCoverSubtitle": "플레이어와 목록 등 앱 화면의 표지를 흐리게 표시합니다",
+  "replaceTitle": "제목 바꾸기",
+  "replaceTitleSubtitle": "실제 제목 대신 다른 제목을 표시합니다",
+  "replaceTitleContent": "대체할 제목",
+  "setReplaceTitle": "대체 제목 설정",
+  "enterDisplayTitle": "표시할 제목 입력",
+  "replaceTitleSaved": "대체 제목을 저장했습니다",
+  "effectExample": "예시",
+  "downloadPathSettings": "다운로드 경로 설정",
+  "loadPathFailedWithError": "경로를 불러오지 못했습니다: {error}",
+  "@loadPathFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "platformNotSupportCustomPath": "이 플랫폼에서는 다운로드 경로를 직접 지정할 수 없습니다",
+  "activeDownloadsWarning": "다운로드 작업 {count}개가 진행 중입니다. 경로를 바꾸려면 작업을 취소하거나 완료하세요",
+  "@activeDownloadsWarning": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "setPathFailedWithError": "경로를 설정하지 못했습니다: {error}",
+  "@setPathFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "confirmMigrateFiles": "파일 이동 확인",
+  "migrateFilesToNewDir": "기존 다운로드 파일을 새 폴더로 옮깁니다:\n",
+  "migrationMayTakeTime": "파일 수와 용량에 따라 시간이 걸릴 수 있습니다.",
+  "confirmMigrate": "파일 이동",
+  "restoreDefaultPath": "기본 경로 복원",
+  "restoreDefaultPathConfirm": "다운로드 경로를 기본 위치로 되돌리고 파일을 모두 이동합니다.\n\n계속할까요?",
+  "defaultPathRestored": "기본 경로로 복원했습니다",
+  "resetPathFailedWithError": "기본 경로로 복원하지 못했습니다: {error}",
+  "@resetPathFailedWithError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "migratingFiles": "파일 이동 중...",
+  "doNotCloseApp": "작업 중 앱을 종료하지 마세요",
+  "currentDownloadPath": "현재 다운로드 경로",
+  "customPath": "사용자 지정 경로",
+  "defaultPath": "기본 경로",
+  "changeCustomPath": "사용자 지정 경로 변경",
+  "setCustomPath": "사용자 지정 경로 설정",
+  "usageInstructions": "사용 방법",
+  "downloadPathUsageDesc": "• 경로를 바꾸면 기존 파일을 새 위치로 자동 이동합니다\n• 파일을 옮기는 동안 앱을 종료하지 마세요\n• 저장 공간이 충분한 폴더를 선택하세요\n• 기본 경로로 복원하면 파일도 자동으로 돌아갑니다",
+  "llmTranslationSettings": "LLM 번역 설정",
+  "apiEndpointUrl": "API 엔드포인트 URL",
+  "apiBaseUrl": "API 기본 URL",
+  "apiProtocol": "API 프로토콜",
+  "chatCompletionsProtocol": "Chat Completions (/chat/completions)",
+  "responsesProtocol": "Responses (/responses)",
+  "anthropicProtocol": "Anthropic Messages (/messages)",
+  "openaiCompatibleEndpoint": "선택한 프로토콜의 경로가 자동으로 추가됩니다",
+  "pleaseEnterApiUrl": "API 엔드포인트 URL을 입력하세요",
+  "pleaseEnterValidUrl": "올바른 URL을 입력하세요",
+  "pleaseEnterApiKey": "API 키를 입력하세요",
+  "modelName": "모델 이름",
+  "pleaseEnterModelName": "모델 이름을 입력하세요",
+  "concurrencyCount": "동시 요청 수",
+  "concurrencyDescription": "동시에 보낼 번역 요청 수입니다. 3~5개를 권장합니다.",
+  "promptSection": "프롬프트",
+  "promptDescription": "번역은 여러 부분으로 나누어 진행됩니다. 설명을 덧붙이지 말고 번역 결과만 출력하도록 프롬프트에 명확히 지정하세요.",
+  "enterSystemPrompt": "시스템 프롬프트 입력...",
+  "pleaseEnterPrompt": "프롬프트를 입력하세요",
+  "restoreDefaultPrompt": "기본 프롬프트 복원",
+  "confirmRestoreButtonOrder": "버튼 순서를 기본값으로 복원할까요?",
+  "buttonDisplayRules": "버튼 표시 규칙",
+  "buttonDisplayRulesDesc": "• 플레이어 아래쪽에 처음 {maxVisible}개 버튼을 표시합니다\n• 나머지 버튼은 \"더보기\" 메뉴에 표시합니다",
+  "@buttonDisplayRulesDesc": {
+    "placeholders": {
+      "maxVisible": {
+        "type": "int"
+      }
+    }
+  },
+  "shownInPlayer": "플레이어에 표시",
+  "shownInMoreMenu": "더보기 메뉴에 표시",
+  "audioFormatPriority": "오디오 형식 우선순위",
+  "confirmRestoreAudioFormat": "오디오 형식 우선순위를 기본값으로 복원할까요?",
+  "priorityDescription": "우선순위 안내",
+  "audioFormatPriorityDesc": "• 작품 상세 페이지를 열면 우선순위가 가장 높은 오디오 형식의 폴더를 먼저 펼칩니다",
+  "ratingInfo": "평점 정보",
+  "showRatingAndReviewCount": "작품 평점과 리뷰 수 표시",
+  "priceInfo": "가격 정보",
+  "showWorkPrice": "작품 가격 표시",
+  "durationInfo": "재생 시간 정보",
+  "showWorkDuration": "작품 재생 시간 표시",
+  "showWorkTotalDuration": "전체 작품 재생 시간 표시",
+  "salesInfo": "판매 정보",
+  "showWorkSalesCount": "작품 판매량 표시",
+  "externalLinkInfo": "외부 링크",
+  "showExternalLinks": "DLsite, 공식 웹사이트 등의 외부 링크 표시",
+  "releaseDateInfo": "발매일 정보",
+  "showWorkReleaseDate": "작품 발매일 표시",
+  "translateButtonLabel": "번역 버튼",
+  "showTranslateButton": "작품 제목 번역 버튼 표시",
+  "subtitleTagLabel": "자막 태그",
+  "showSubtitleTagOnCover": "표지에 자막 태그 표시",
+  "showAgeRatingOnDetail": "작품 상세 페이지에 연령 등급 표시",
+  "recommendationsLabel": "관련 작품 추천",
+  "showRecommendations": "작품 상세 페이지에 관련 작품 추천 표시",
+  "circleInfo": "서클 정보",
+  "showWorkCircle": "작품 서클 표시",
+  "workCardSizeSubtitle": "격자 밀도를 조절해 표지 크기를 바꿉니다",
+  "workCardFontSize": "카드 글자 크기",
+  "workCardFontSizeSubtitle": "작품 카드 제목과 메타데이터 글자 크기를 조절합니다",
+  "cardSizeNormal": "보통",
+  "cardSizeLarge": "큼",
+  "cardSizeExtraLarge": "아주 큼",
+  "fontSizeNormal": "보통",
+  "fontSizeLarge": "큼",
+  "fontSizeExtraLarge": "아주 큼",
+  "showSubtitleTagOnCard": "작품 카드에 자막 태그 표시",
+  "showAgeRatingOnCard": "작품 카드에 연령 등급 표시",
+  "showOnlineMarks": "온라인 표시 작품 보기",
+  "cannotBeDisabled": "사용 중지할 수 없음",
+  "showPlaylists": "만든 플레이리스트 표시",
+  "showSubtitleLibrary": "자막 보관함 관리 표시",
+  "playlistPrivacyPrivateDesc": "나만 볼 수 있습니다",
+  "playlistPrivacyUnlistedDesc": "링크가 있는 사람만 볼 수 있습니다",
+  "playlistPrivacyPublicDesc": "누구나 볼 수 있습니다",
+  "clearTranslationCache": "번역 캐시 삭제",
+  "translationCacheCleared": "번역 캐시를 삭제했습니다",
+  "platformHintAndroid": "Android: 시스템 파일 선택기를 사용합니다. 저장소 권한이 필요할 수 있습니다",
+  "platformHintIOS": "iOS: 시스템 제한으로 기본 경로를 사용합니다. 파일 앱에서 파일에 접근할 수 있습니다",
+  "platformHintWindows": "Windows: 접근 가능한 폴더를 선택할 수 있습니다",
+  "platformHintMacOS": "macOS: 접근 가능한 폴더를 선택할 수 있습니다",
+  "platformHintLinux": "Linux: 접근 가능한 폴더를 선택할 수 있습니다",
+  "platformHintDefault": "다운로드 파일을 저장할 폴더를 선택하세요",
+  "subtitleFolderParsed": "분류됨",
+  "subtitleFolderSaved": "저장됨",
+  "subtitleFolderUnknown": "알 수 없는 작품",
+  "sortDownloadDate": "다운로드 날짜",
+  "sortWorkId": "ID",
+  "searchDownloads": "다운로드한 작품 검색...",
+  "logTitle": "앱 로그",
+  "logSubtitle": "앱 로그를 확인하고 내보냅니다",
+  "logSearchHint": "로그 검색...",
+  "logFilterAll": "전체",
+  "logCopy": "로그 복사",
+  "logExport": "로그 파일 내보내기",
+  "logClear": "로그 삭제",
+  "logCopied": "로그를 클립보드에 복사했습니다",
+  "logExported": "로그를 내보냈습니다: {path}",
+  "@logExported": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "logCount": "항목 {count}개",
+  "@logCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "logAutoScroll": "자동 스크롤",
+  "logEmpty": "로그가 없습니다",
+  "proxySettingsOptional": "프록시",
+  "loginAdvancedSettings": "고급 설정",
+  "proxyEnabled": "사용 중: {address}",
+  "@proxyEnabled": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+  "proxyAddressNotSet": "설정 안 됨 (직접 연결)",
+  "proxyHttpDescription": "HTTP 프록시를 통해 연결합니다",
+  "useProxy": "프록시 사용",
+  "proxyAddress": "프록시 주소",
+  "proxyAddressFormat": "형식: host:port (예: 127.0.0.1:7890)",
+  "applyProxyAddress": "프록시 주소 적용",
+  "invalidProxyAddress": "올바른 HTTP 프록시 주소와 포트를 입력하세요",
+  "proxyModeDirect": "직접 연결",
+  "proxyModeSystem": "시스템 프록시",
+  "proxyModeManual": "수동 프록시",
+  "proxyModeDirectDescription": "프록시 없이 연결합니다",
+  "proxyModeSystemDescription": "운영 체제의 프록시 설정을 사용합니다",
+  "proxyModeManualDescription": "아래에 설정한 HTTP 프록시를 사용합니다",
+  "playlistDisplayFormat": "플레이리스트 레이아웃",
+  "playlistDisplayFormatMasonry": "벽돌형",
+  "playlistDisplayFormatList": "목록"
+}

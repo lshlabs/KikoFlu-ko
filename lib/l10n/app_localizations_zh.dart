@@ -1234,6 +1234,9 @@ class SZh extends S {
   String get languageRu => 'Русский';
 
   @override
+  String get languageKo => '韩语';
+
+  @override
   String get themeModeDark => '深色模式';
 
   @override
@@ -4871,6 +4874,9 @@ class SZhHant extends SZh {
 
   @override
   String get languageRu => 'Русский';
+
+  @override
+  String get languageKo => '韓語';
 
   @override
   String get themeModeDark => '深色模式';

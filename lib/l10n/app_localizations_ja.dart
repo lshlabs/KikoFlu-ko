@@ -1237,6 +1237,9 @@ class SJa extends S {
   String get languageRu => 'Русский';
 
   @override
+  String get languageKo => '韓国語';
+
+  @override
   String get themeModeDark => 'ダークモード';
 
   @override

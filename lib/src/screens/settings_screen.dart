@@ -403,6 +403,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       (S.of(context).languageEn, const Locale('en')),
       (S.of(context).languageJa, const Locale('ja')),
       (S.of(context).languageRu, const Locale('ru')),
+      (S.of(context).languageKo, const Locale('ko')),
     ];
     final selectedIndex = options.indexWhere(
       (option) =>
@@ -457,6 +458,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 'en' => S.of(context).languageEn,
                 'ja' => S.of(context).languageJa,
                 'ru' => S.of(context).languageRu,
+                'ko' => S.of(context).languageKo,
                 _ => currentLocale.languageCode,
               };
             }

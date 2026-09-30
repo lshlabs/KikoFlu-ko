@@ -1271,6 +1271,9 @@ class SEn extends S {
   String get languageRu => 'Русский';
 
   @override
+  String get languageKo => 'Korean';
+
+  @override
   String get themeModeDark => 'Dark Mode';
 
   @override

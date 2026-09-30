@@ -7,6 +7,7 @@ import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.dart';
 import 'app_localizations_ja.dart';
+import 'app_localizations_ko.dart';
 import 'app_localizations_ru.dart';
 import 'app_localizations_zh.dart';
 
@@ -97,6 +98,7 @@ abstract class S {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
     Locale('ja'),
+    Locale('ko'),
     Locale('ru'),
     Locale('zh'),
     Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
@@ -2411,6 +2413,12 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Русский'**
   String get languageRu;
+
+  /// No description provided for @languageKo.
+  ///
+  /// In en, this message translates to:
+  /// **'Korean'**
+  String get languageKo;
 
   /// No description provided for @themeModeDark.
   ///
@@ -6731,7 +6739,7 @@ class _SDelegate extends LocalizationsDelegate<S> {
 
   @override
   bool isSupported(Locale locale) =>
-      <String>['en', 'ja', 'ru', 'zh'].contains(locale.languageCode);
+      <String>['en', 'ja', 'ko', 'ru', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_SDelegate old) => false;
@@ -6756,6 +6764,8 @@ S lookupS(Locale locale) {
       return SEn();
     case 'ja':
       return SJa();
+    case 'ko':
+      return SKo();
     case 'ru':
       return SRu();
     case 'zh':
