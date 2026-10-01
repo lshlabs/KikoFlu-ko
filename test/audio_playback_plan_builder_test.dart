@@ -35,6 +35,29 @@ const _work = Work(
 );
 
 void main() {
+  test('plays cached Linux trees with a relative path as the folder title', () async {
+    final selected = audioItem('track02.mp3', hash: '123456/2');
+    final tree = [
+      folderItem('작품 파일/음성 본편/MP3', [
+        audioItem('track01.mp3', hash: '123456/1'), selected,
+      ]),
+      folderItem('작품 파일/음성 본편/FLAC', [
+        audioItem('track01.flac', hash: '123456/3'),
+      ]),
+    ];
+    final plan = await const AudioPlaybackPlanBuilder().build(
+      fileTree: tree,
+      parentPath: '작품 파일/음성 본편/MP3',
+      selectedFile: selected,
+      resolveUrl: (file) async => 'https://example.com/api/media/stream/${file['hash']}',
+      work: _work,
+      unknownTitle: 'Unknown',
+    );
+    expect(plan.status, AudioPlaybackPlanStatus.ready);
+    expect(plan.queue!.tracks.map((track) => track.hash), ['123456/1', '123456/2']);
+    expect(plan.queue!.startIndex, 1);
+  });
+
   test('returns missing when selected file is outside the parent directory',
       () async {
     final fileTree = [

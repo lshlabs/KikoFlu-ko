@@ -156,26 +156,26 @@ class FileTreeUtils {
   ) {
     if (targetPath.isEmpty) return rootItems;
 
-    final segments = targetPath.split('/');
-    var currentItems = rootItems;
-
-    for (final segment in segments) {
-      dynamic matchedFolder;
-      for (final item in currentItems) {
-        if (isFolder(item) && titleOf(item) == segment) {
-          matchedFolder = item;
-          break;
-        }
+    // Older Linux servers sent an entire relative path as one folder title.
+    // Match the paths built by FileTreeView instead of splitting folder names,
+    // so both legacy cached trees and properly nested trees remain playable.
+    List<dynamic>? find(List<dynamic> items, String parentPath) {
+      for (final item in items) {
+        if (!isFolder(item)) continue;
+        final path = itemPath(parentPath, item);
+        if (path == targetPath) return childrenOf(item) ?? [];
       }
-
-      if (matchedFolder == null) {
-        return [];
+      for (final item in items) {
+        if (!isFolder(item)) continue;
+        final path = itemPath(parentPath, item);
+        if (!targetPath.startsWith('$path/')) continue;
+        final found = find(childrenOf(item) ?? [], path);
+        if (found != null) return found;
       }
-
-      currentItems = childrenOf(matchedFolder) ?? [];
+      return null;
     }
 
-    return currentItems;
+    return find(rootItems, '') ?? [];
   }
 
   static FileTreeFolderStats countImmediateFiles(

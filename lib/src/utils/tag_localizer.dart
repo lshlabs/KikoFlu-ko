@@ -17,13 +17,16 @@ class TagLocalizer {
     if (translations == null) return defaultName;
 
     final key = _localeKey(locale);
+    // Self-hosted Korean collection already supplies localized tag names.
+    // The static map has no Korean entries; don't overwrite these with English.
+    if (key == 'ko') return translations[key] ?? defaultName;
     return translations[key] ?? translations['zh'] ?? defaultName;
   }
 
   /// Get the localized name for a tag, looking up by original name if ID is unknown.
   static String localizeByName(String name, Locale locale) {
     final key = _localeKey(locale);
-    if (key == 'zh') return name; // Already in Simplified Chinese, no lookup needed
+    if (key == 'zh' || key == 'ko') return name;
 
     // Find tag ID by name
     final id = tagNameToId[name.toLowerCase()];
@@ -37,6 +40,8 @@ class TagLocalizer {
 
   static String _localeKey(Locale locale) {
     switch (locale.languageCode) {
+      case 'ko':
+        return 'ko';
       case 'en':
         return 'en';
       case 'ja':

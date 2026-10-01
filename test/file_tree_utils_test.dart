@@ -27,6 +27,19 @@ Map<String, dynamic> folderItem(
 
 void main() {
   group('FileTreeUtils', () {
+    test('matches legacy compound folder titles and nested children', () {
+      final tree = [
+        folderItem('작품/음성', [
+          folderItem('MP3', [fileItem('track01.mp3')]),
+        ]),
+        folderItem('작품/이미지', [fileItem('cover.jpg')]),
+      ];
+      expect(FileTreeUtils.findFolderChildren(tree, '작품/음성/MP3')
+          .map(FileTreeUtils.titleOf), ['track01.mp3']);
+      expect(FileTreeUtils.audioFilesInDirectory(tree, '작품/음성/MP3'), hasLength(1));
+      expect(FileTreeUtils.findFolderChildren(tree, '작품/음성/없는 폴더'), isEmpty);
+    });
+
     test('reads map properties and builds item paths', () {
       final item = fileItem('track01.mp3', type: 'audio');
 
