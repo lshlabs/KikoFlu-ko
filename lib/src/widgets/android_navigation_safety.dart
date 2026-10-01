@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-/// Reserve system navigation space once, above the Navigator, so pushed
+/// Reserve status-bar and system navigation space once, above the Navigator, so pushed
 /// screens, dialogs and bottom sheets receive the same usable bounds.
 class AndroidNavigationSafeArea extends StatelessWidget {
   const AndroidNavigationSafeArea({super.key, required this.child});
@@ -14,7 +14,7 @@ class AndroidNavigationSafeArea extends StatelessWidget {
     if (defaultTargetPlatform != TargetPlatform.android) return child;
     return ColoredBox(
       color: Theme.of(context).scaffoldBackgroundColor,
-      child: SafeArea(top: false, child: child),
+      child: SafeArea(child: child),
     );
   }
 }

@@ -5,6 +5,46 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kikoeru_flutter/src/widgets/android_navigation_safety.dart';
 
 void main() {
+  for (final topInset in [24.0, 48.0]) {
+    testWidgets('status bar and cutout inset $topInset is applied once', (
+      tester,
+    ) async {
+      final contentKey = UniqueKey();
+      MediaQueryData? inside;
+      await tester.pumpWidget(
+        MaterialApp(
+          builder: (context, child) => MediaQuery(
+            data: MediaQuery.of(context).copyWith(
+              padding: EdgeInsets.only(top: topInset, bottom: 48),
+              viewPadding: EdgeInsets.only(top: topInset, bottom: 48),
+            ),
+            child: AndroidNavigationSafeArea(child: child!),
+          ),
+          home: Scaffold(
+            appBar: AppBar(title: const Text('Toolbar')),
+            body: SafeArea(
+              child: Builder(
+                builder: (context) {
+                  inside = MediaQuery.of(context);
+                  return SizedBox.expand(key: contentKey);
+                },
+              ),
+            ),
+          ),
+        ),
+      );
+      expect(tester.getRect(find.byType(AppBar)).top, topInset);
+      expect(tester.getRect(find.byType(AppBar)).height, kToolbarHeight);
+      expect(
+        tester.getRect(find.byKey(contentKey)).top,
+        topInset + kToolbarHeight,
+      );
+      expect(tester.getRect(find.byKey(contentKey)).bottom, 600 - 48);
+      expect(inside!.padding.top, 0);
+      expect(inside!.viewPadding.top, 0);
+    });
+  }
+
   testWidgets('changing tabs disables a retained folder handler', (
     tester,
   ) async {
