@@ -29,7 +29,9 @@ export '../providers/my_reviews_provider.dart' show MyReviewLayoutType;
 import '../../l10n/app_localizations.dart';
 
 class MyScreen extends ConsumerStatefulWidget {
-  const MyScreen({super.key});
+  const MyScreen({super.key, this.isActive = true});
+
+  final bool isActive;
 
   @override
   ConsumerState<MyScreen> createState() => _MyScreenState();
@@ -119,6 +121,7 @@ class _MyScreenState extends ConsumerState<MyScreen>
         icon: Icons.subtitles,
         index: 3,
         widget: SubtitleLibraryScreen(
+          isActive: widget.isActive && _tabController.index == tabs.length,
           toolbarTop: contentTop,
           collapsedToolbarTop: collapsedToolbarTop,
           primaryToolbarVisible: _tabSwitcherVisible,
@@ -165,7 +168,7 @@ class _MyScreenState extends ConsumerState<MyScreen>
 
   void _handleTabChanged() {
     if (_tabController.index == _lastTabIndex) return;
-    _lastTabIndex = _tabController.index;
+    setState(() => _lastTabIndex = _tabController.index);
     _tabSwitcherVisible.value = true;
   }
 

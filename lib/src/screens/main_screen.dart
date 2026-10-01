@@ -9,6 +9,7 @@ import '../providers/auth_provider.dart';
 import '../widgets/main_bottom_navigation_bar.dart';
 import '../widgets/mini_player.dart';
 import '../widgets/liquid_glass_layout.dart';
+import '../widgets/android_navigation_safety.dart';
 import 'works_screen.dart';
 import 'search_screen.dart';
 import 'my_screen.dart';
@@ -30,17 +31,17 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   final PageStorageBucket _bucket = PageStorageBucket();
   final ValueNotifier<double> _liquidDockExtent = ValueNotifier(0);
 
-  late final List<Widget> _screens;
+  List<Widget> get _screens => [
+    const WorksScreen(key: PageStorageKey('works_screen')),
+    const SearchScreen(key: PageStorageKey('search_screen')),
+    MyScreen(key: const PageStorageKey('my_screen'), isActive: _currentIndex == 2),
+    const SettingsScreen(key: PageStorageKey('settings_screen')),
+  ];
 
-  @override
-  void initState() {
-    super.initState();
-    _screens = const [
-      WorksScreen(key: PageStorageKey('works_screen')),
-      SearchScreen(key: PageStorageKey('search_screen')),
-      MyScreen(key: PageStorageKey('my_screen')),
-      SettingsScreen(key: PageStorageKey('settings_screen')),
-    ];
+  bool _handleBack() {
+    if (_currentIndex == 0) return false;
+    _handleDestinationSelected(0);
+    return true;
   }
 
   @override
@@ -98,6 +99,10 @@ class _MainScreenState extends ConsumerState<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return AndroidRootBackGuard(onBack: _handleBack, child: _buildLayout(context));
+  }
+
+  Widget _buildLayout(BuildContext context) {
     final isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
     final showUpdateBadge = ref.watch(showUpdateRedDotProvider);

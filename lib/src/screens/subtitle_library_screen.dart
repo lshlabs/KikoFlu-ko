@@ -25,16 +25,19 @@ import '../widgets/confirmation_dialog.dart';
 import '../widgets/common_input_dialog.dart';
 import '../widgets/responsive_dialog.dart';
 import '../widgets/floating_feed_toolbar.dart';
+import '../widgets/android_navigation_safety.dart';
 
 /// 字幕库界面
 class SubtitleLibraryScreen extends ConsumerStatefulWidget {
   const SubtitleLibraryScreen({
     super.key,
     this.toolbarTop = 8,
+    this.isActive = true,
     this.collapsedToolbarTop,
     this.primaryToolbarVisible,
   });
 
+  final bool isActive;
   final double toolbarTop;
   final double? collapsedToolbarTop;
   final ValueListenable<bool>? primaryToolbarVisible;
@@ -693,11 +696,27 @@ class _SubtitleLibraryScreenState extends ConsumerState<SubtitleLibraryScreen> {
       }
     });
 
-    return PopScope(
-      canPop: _currentPath == _rootPath || _currentPath.isEmpty,
-      onPopInvokedWithResult: (didPop, result) {
-        if (didPop) return;
-        _navigateUp();
+    return ScreenBackHandler(
+      enabled: widget.isActive &&
+          (_isSelectionMode || _isSearching ||
+              (_rootPath != null && _currentPath.isNotEmpty &&
+                  _currentPath != _rootPath)),
+      onBack: () {
+        if (_isSelectionMode) {
+          setState(() {
+            _isSelectionMode = false;
+            _selectedPaths.clear();
+          });
+        } else if (_isSearching) {
+          setState(() {
+            _isSearching = false;
+            _searchQuery = '';
+            _searchController.clear();
+          });
+        } else {
+          _navigateUp();
+        }
+        return true;
       },
       child: Scaffold(
         floatingActionButton: FloatingActionButton(

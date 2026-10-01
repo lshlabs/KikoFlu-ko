@@ -43,6 +43,7 @@ import 'src/utils/desktop_window_options.dart';
 import 'src/utils/global_keys.dart';
 import 'src/utils/system_ui_style.dart';
 import 'src/widgets/screen_awake_observer.dart';
+import 'src/widgets/android_navigation_safety.dart';
 
 void _setEnv(String key, String value) {
   if (Platform.isWindows) {
@@ -529,6 +530,9 @@ class _KikoeruAppState extends ConsumerState<KikoeruApp>
             : requestedMode;
 
         return MaterialApp(
+          builder: (context, child) => AndroidNavigationSafeArea(
+            child: child ?? const SizedBox.shrink(),
+          ),
           scaffoldMessengerKey: rootScaffoldMessengerKey,
           title: 'Kikoeru',
           debugShowCheckedModeBanner: false,
@@ -560,7 +564,7 @@ class _KikoeruAppState extends ConsumerState<KikoeruApp>
     if (authState.currentUser != null) {
       return const MainScreen();
     } else {
-      return const LoginScreen();
+      return const AndroidRootBackGuard(child: LoginScreen());
     }
   }
 }
