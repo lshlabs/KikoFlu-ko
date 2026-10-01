@@ -1,3 +1,4 @@
+import '../providers/work_title_provider.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -45,10 +46,7 @@ class FileExplorerController {
     final state = _state;
     if (state == null) return;
 
-    await state._loadWorkTree(
-      forceRefresh: forceRefresh,
-      propagateError: true,
-    );
+    await state._loadWorkTree(forceRefresh: forceRefresh, propagateError: true);
   }
 
   void _attach(_FileExplorerWidgetState state) {
@@ -66,11 +64,7 @@ class FileExplorerWidget extends ConsumerStatefulWidget {
   final Work work;
   final FileExplorerController? controller;
 
-  const FileExplorerWidget({
-    super.key,
-    required this.work,
-    this.controller,
-  });
+  const FileExplorerWidget({super.key, required this.work, this.controller});
 
   @override
   ConsumerState<FileExplorerWidget> createState() => _FileExplorerWidgetState();
@@ -90,12 +84,11 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
   int _downloadScanGeneration = 0;
 
   FilePreviewResolver get _previewResolver => FilePreviewResolver(
-        downloadRootPath: () async {
-          final downloadDir =
-              await DownloadService.instance.getDownloadDirectory();
-          return downloadDir.path;
-        },
-      );
+    downloadRootPath: () async {
+      final downloadDir = await DownloadService.instance.getDownloadDirectory();
+      return downloadDir.path;
+    },
+  );
 
   DownloadedFileStateScanner get _downloadedFileScanner {
     final downloadService = DownloadService.instance;
@@ -122,8 +115,9 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
 
   final VideoFileOpener _videoFileOpener = VideoFileOpener();
   final SubtitleMatchLoader _subtitleMatchLoader = const SubtitleMatchLoader();
-  final FileExplorerTapResolver _tapResolver =
-      const FileExplorerTapResolver(videoBeforeAudio: true);
+  final FileExplorerTapResolver _tapResolver = const FileExplorerTapResolver(
+    videoBeforeAudio: true,
+  );
   final AudioPlaybackPlanBuilder _audioPlaybackPlanBuilder =
       const AudioPlaybackPlanBuilder();
   final FileNameTranslationController _translationController =
@@ -259,7 +253,8 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
         ..addAll(matches);
 
       _log.captureOutput(
-          '[FileExplorer] 字幕库匹配: ${_audioWithLibrarySubtitles.length} 个音频文件有字幕');
+        '[FileExplorer] 字幕库匹配: ${_audioWithLibrarySubtitles.length} 个音频文件有字幕',
+      );
     } catch (e) {
       _log.captureOutput('[FileExplorer] 检查字幕库失败: $e');
     }
@@ -283,7 +278,8 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
     _expandedFolders.addAll(mainFolder.expandedPaths);
     if (mainFolder.path.isNotEmpty) {
       _log.captureOutput(
-          '[FileExplorer] 识别到主文件夹 $_mainFolderPath (音频:${mainFolder.audioCount}, 文本:${mainFolder.textCount})');
+        '[FileExplorer] 识别到主文件夹 $_mainFolderPath (音频:${mainFolder.audioCount}, 文本:${mainFolder.textCount})',
+      );
     }
   }
 
@@ -303,8 +299,9 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
     final authState = ref.read(authProvider);
     final host = authState.host ?? '';
     final token = authState.token ?? '';
-    final coverUrl =
-        host.isEmpty ? null : widget.work.getCoverImageUrl(host, token: token);
+    final coverUrl = host.isEmpty
+        ? null
+        : widget.work.getCoverImageUrl(host, token: token);
     final title = FileTreeUtils.titleOf(audioFile, defaultValue: l10n.unknown);
 
     // 获取当前作品的完整文件树（用于字幕查找）
@@ -313,10 +310,9 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
       final allFiles = await apiService.getWorkTracks(widget.work.id);
 
       // 只在播放音频时更新全局文件列表，这样字幕才能正确关联
-      ref.read(fileListControllerProvider.notifier).updateFiles(
-            allFiles,
-            workId: widget.work.id,
-          );
+      ref
+          .read(fileListControllerProvider.notifier)
+          .updateFiles(allFiles, workId: widget.work.id);
     } catch (e) {
       _log.captureOutput('获取完整文件树失败 $e');
       // 即使获取失败也继续播放，只是可能没有字幕
@@ -324,8 +320,9 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
 
     if (!mounted) return;
 
-    final playlistMode =
-        await ref.read(audioTapPlaylistModeProvider.notifier).getMode();
+    final playlistMode = await ref
+        .read(audioTapPlaylistModeProvider.notifier)
+        .getMode();
     if (!mounted) return;
     final plan = await _audioPlaybackPlanBuilder.build(
       fileTree: _rootFiles,
@@ -340,6 +337,7 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
         fileRelativePaths: _fileRelativePaths,
       ),
       work: widget.work,
+      displayTitle: ref.read(displayedWorkTitleProvider(widget.work)),
       unknownTitle: l10n.unknown,
       artworkUrl: coverUrl,
       playlistMode: playlistMode,
@@ -368,19 +366,19 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
         _log.captureOutput('播放队列包含 ${queue.tracks.length} 个文件');
 
         try {
-          await ref.read(audioPlayerControllerProvider.notifier).playTracks(
+          await ref
+              .read(audioPlayerControllerProvider.notifier)
+              .playTracks(
                 queue.tracks,
                 startIndex: queue.startIndex,
                 work: widget.work,
+
                 playlistMode: playlistMode,
               );
         } catch (e) {
           _log.captureOutput('播放音频失败: $e');
           if (mounted) {
-            SnackBarUtil.showError(
-              context,
-              l10n.playbackFailed(e.toString()),
-            );
+            SnackBarUtil.showError(context, l10n.playbackFailed(e.toString()));
           }
         }
     }
@@ -402,10 +400,9 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
       subtitleTitle: title,
       currentAudioTitle: currentTrack?.title,
       loadSubtitle: (file, {required workId}) {
-        return ref.read(lyricControllerProvider.notifier).loadLyricManually(
-              file,
-              workId: workId,
-            );
+        return ref
+            .read(lyricControllerProvider.notifier)
+            .loadLyricManually(file, workId: workId);
       },
       isMounted: () => mounted,
       successDuration: const Duration(seconds: 3),
@@ -469,10 +466,7 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
     await _previewDocumentFile(file, isPdf: true);
   }
 
-  Future<void> _previewDocumentFile(
-    dynamic file, {
-    required bool isPdf,
-  }) async {
+  Future<void> _previewDocumentFile(dynamic file, {required bool isPdf}) async {
     final authState = ref.read(authProvider);
     final host = authState.host ?? '';
     final token = authState.token ?? '';
@@ -561,10 +555,7 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
         _handleVideoOpenResult(result);
         return;
       case PreviewVideoTargetStatus.missingId:
-        SnackBarUtil.showError(
-          context,
-          S.of(context).cannotPlayVideoMissingId,
-        );
+        SnackBarUtil.showError(context, S.of(context).cannotPlayVideoMissingId);
         return;
       case PreviewVideoTargetStatus.missingParams:
         SnackBarUtil.showError(
@@ -632,8 +623,10 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
       onRetry: _loadWorkTree,
       title: _translationController.showTranslation
           ? S
-              .of(context)
-              .resourceFilesTranslated(_translationController.translationCount)
+                .of(context)
+                .resourceFilesTranslated(
+                  _translationController.translationCount,
+                )
           : S.of(context).resourceFiles,
       trailing: TranslationToggleButton(
         isTranslated: _translationController.showTranslation,
@@ -673,10 +666,7 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
 
     return Text(
       durationText,
-      style: TextStyle(
-        fontSize: 11,
-        color: Colors.grey[600],
-      ),
+      style: TextStyle(fontSize: 11, color: Colors.grey[600]),
     );
   }
 
@@ -702,26 +692,28 @@ class _FileExplorerWidgetState extends ConsumerState<FileExplorerWidget> {
     }
 
     final l10n = S.of(context);
-    final generation =
-        _translationController.beginBulkTranslation(l10n.preparingTranslation);
+    final generation = _translationController.beginBulkTranslation(
+      l10n.preparingTranslation,
+    );
     setState(() {});
 
     try {
-      final result = await FileNameTranslationService(
-        translate: TranslationService().translate,
-      ).translateFileTree(
-        fileTree: _rootFiles,
-        onProgress: (current, total) {
-          final updated = _translationController.updateBulkProgress(
-            generation,
-            l10n.translatingProgress(current, total),
+      final result =
+          await FileNameTranslationService(
+            translate: TranslationService().translate,
+          ).translateFileTree(
+            fileTree: _rootFiles,
+            onProgress: (current, total) {
+              final updated = _translationController.updateBulkProgress(
+                generation,
+                l10n.translatingProgress(current, total),
+              );
+              if (updated && mounted) setState(() {});
+            },
+            onChunkError: (index, error) {
+              _log.captureOutput('[FileExplorer] 翻译块 $index 失败: $error');
+            },
           );
-          if (updated && mounted) setState(() {});
-        },
-        onChunkError: (index, error) {
-          _log.captureOutput('[FileExplorer] 翻译块 $index 失败: $error');
-        },
-      );
 
       if (!mounted) return;
 

@@ -1,3 +1,4 @@
+import '../providers/work_title_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../l10n/app_localizations.dart';
@@ -344,7 +345,7 @@ class _FileSelectionDialogState extends ConsumerState<FileSelectionDialog> {
 
         await downloadService.addTask(
           workId: widget.work.id,
-          workTitle: widget.work.title,
+          workTitle: ref.watch(displayedWorkTitleProvider(widget.work)),
           fileName: localFileName ?? fullFileName, // 使用包含路径的本地文件名
           downloadUrl: downloadUrl,
           hash: file.hash,
@@ -386,7 +387,7 @@ class _FileSelectionDialogState extends ConsumerState<FileSelectionDialog> {
           children: [
             BottomSheetHeader(
               leading: const Icon(Icons.download),
-              title: widget.work.title,
+              title: ref.watch(displayedWorkTitleProvider(widget.work)),
               subtitle: _isCheckingDownloads
                   ? null
                   : S
@@ -453,7 +454,7 @@ class _FileSelectionDialogState extends ConsumerState<FileSelectionDialog> {
           BottomSheetHeader(
             leading: const Icon(Icons.download),
             title: S.of(context).selectFilesToDownload,
-            subtitle: widget.work.title,
+            subtitle: ref.watch(displayedWorkTitleProvider(widget.work)),
           ),
 
           // Toolbar

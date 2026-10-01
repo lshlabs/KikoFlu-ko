@@ -8,6 +8,8 @@ part 'work.g.dart';
 class Work extends Equatable {
   final int id;
   final String title;
+  final String? folderName;
+  final String? customTitle;
 
   @JsonKey(name: 'circle_id')
   final int? circleId;
@@ -39,7 +41,7 @@ class Work extends Equatable {
   final int? duration;
 
   final String?
-      progress; // 收藏状态: marked, listening, listened, replay, postponed
+  progress; // 收藏状态: marked, listening, listened, replay, postponed
 
   @JsonKey(name: 'userRating')
   final int? userRating; // 用户评分: 1-5星
@@ -63,6 +65,8 @@ class Work extends Equatable {
   const Work({
     required this.id,
     required this.title,
+    this.folderName,
+    this.customTitle,
     this.circleId,
     this.name,
     this.vas,
@@ -165,6 +169,9 @@ class Work extends Equatable {
   Work copyWith({
     int? id,
     String? title,
+    String? folderName,
+    String? customTitle,
+    bool clearCustomTitle = false,
     int? circleId,
     String? name,
     List<Va>? vas,
@@ -191,6 +198,8 @@ class Work extends Equatable {
     return Work(
       id: id ?? this.id,
       title: title ?? this.title,
+      folderName: folderName ?? this.folderName,
+      customTitle: clearCustomTitle ? null : customTitle ?? this.customTitle,
       circleId: circleId ?? this.circleId,
       name: name ?? this.name,
       vas: vas ?? this.vas,
@@ -219,31 +228,33 @@ class Work extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        title,
-        circleId,
-        name,
-        vas,
-        tags,
-        age,
-        release,
-        dlCount,
-        price,
-        reviewCount,
-        rateCount,
-        rateAverage,
-        hasSubtitle,
-        duration,
-        progress,
-        userRating,
-        rateCountDetail,
-        images,
-        description,
-        children,
-        sourceUrl,
-        sourceId,
-        otherLanguageEditions,
-      ];
+    id,
+    title,
+    folderName,
+    customTitle,
+    circleId,
+    name,
+    vas,
+    tags,
+    age,
+    release,
+    dlCount,
+    price,
+    reviewCount,
+    rateCount,
+    rateAverage,
+    hasSubtitle,
+    duration,
+    progress,
+    userRating,
+    rateCountDetail,
+    images,
+    description,
+    children,
+    sourceUrl,
+    sourceId,
+    otherLanguageEditions,
+  ];
 }
 
 @JsonSerializable()
@@ -276,8 +287,14 @@ class OtherLanguageEdition extends Equatable {
   Map<String, dynamic> toJson() => _$OtherLanguageEditionToJson(this);
 
   @override
-  List<Object?> get props =>
-      [id, lang, title, sourceId, isOriginal, sourceType];
+  List<Object?> get props => [
+    id,
+    lang,
+    title,
+    sourceId,
+    isOriginal,
+    sourceType,
+  ];
 }
 
 @JsonSerializable()
@@ -437,6 +454,13 @@ class AudioFile extends Equatable {
   }
 
   @override
-  List<Object?> get props =>
-      [title, type, hash, children, mediaDownloadUrl, size, duration];
+  List<Object?> get props => [
+    title,
+    type,
+    hash,
+    children,
+    mediaDownloadUrl,
+    size,
+    duration,
+  ];
 }

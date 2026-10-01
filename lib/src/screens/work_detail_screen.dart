@@ -1,3 +1,4 @@
+import '../providers/work_title_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -141,8 +142,10 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
 
     try {
       final translationService = TranslationService();
-      final translated =
-          await translationService.translate(work.title, sourceLang: 'ja');
+      final translated = await translationService.translate(
+        work.title,
+        sourceLang: 'ja',
+      );
 
       if (mounted) {
         setState(() {
@@ -191,8 +194,9 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
             setState(() {
               // 更新 _detailedWork 中的 tag
               if (_detailedWork != null && _detailedWork!.tags != null) {
-                final tagIndex = _detailedWork!.tags!
-                    .indexWhere((t) => t.id == updatedTag.id);
+                final tagIndex = _detailedWork!.tags!.indexWhere(
+                  (t) => t.id == updatedTag.id,
+                );
                 if (tagIndex != -1) {
                   final updatedTags = List<Tag>.from(_detailedWork!.tags!);
                   updatedTags[tagIndex] = updatedTag;
@@ -295,15 +299,15 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
                 return Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    BottomSheetHeader(
-                      title: S.of(context).loadFailed,
-                    ),
+                    BottomSheetHeader(title: S.of(context).loadFailed),
                     const Divider(height: 1),
                     Padding(
                       padding: const EdgeInsets.all(24),
-                      child: Text(S
-                          .of(context)
-                          .loadFileListFailed(snapshot.error.toString())),
+                      child: Text(
+                        S
+                            .of(context)
+                            .loadFileListFailed(snapshot.error.toString()),
+                      ),
                     ),
                   ],
                 );
@@ -472,13 +476,15 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
           // 作品编号作为标题,支持长按复制
           title: GestureDetector(
             onLongPress: () => _copyToClipboard(
-                widget.work.displayId, S.of(context).workIdLabel),
+              widget.work.displayId,
+              S.of(context).workIdLabel,
+            ),
             child: Text(
               widget.work.displayId,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
             ),
           ),
           backgroundColor: Colors.transparent,
@@ -528,7 +534,7 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
             builder: (context, ref, _) {
               final displaySettings = ref.watch(workDetailDisplayProvider);
               return WorkTitleHeader(
-                title: work.title,
+                title: ref.watch(displayedWorkTitleProvider(work)),
                 translatedTitle: _translatedTitle,
                 showTranslation: _showTranslation,
                 showTranslateButton: displaySettings.showTranslateButton,
@@ -539,10 +545,8 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
                 onOpenExternalLink: work.sourceUrl == null
                     ? null
                     : () => _openSourceUrl(work.sourceUrl!),
-                onCopy: (title) => _copyToClipboard(
-                  title,
-                  S.of(context).titleLabel,
-                ),
+                onCopy: (title) =>
+                    _copyToClipboard(title, S.of(context).titleLabel),
               );
             },
           ),
@@ -572,10 +576,7 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
 
           const SizedBox(height: 16),
 
-          WorkCreatorChipsSection(
-            work: work,
-            onCopy: _copyToClipboard,
-          ),
+          WorkCreatorChipsSection(work: work, onCopy: _copyToClipboard),
 
           WorkTagChipsSection(
             tags: work.tags,
@@ -600,10 +601,7 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => WorkDetailScreen(
-                    work: Work(
-                      id: edition.id,
-                      title: edition.title,
-                    ),
+                    work: Work(id: edition.id, title: edition.title),
                   ),
                 ),
               );
@@ -611,10 +609,7 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
           ),
 
           // 文件浏览器组件 - 移除固定高度，让它自由展开
-          FileExplorerWidget(
-            work: work,
-            controller: _fileExplorerController,
-          ),
+          FileExplorerWidget(work: work, controller: _fileExplorerController),
 
           // 相关推荐
           RecommendationSection(work: work),
@@ -636,11 +631,7 @@ class _WorkDetailScreenState extends ConsumerState<WorkDetailScreen> {
               MaterialPageRoute(
                 builder: (context) => ImageGalleryScreen(
                   images: [
-                    {
-                      'url': coverUrl,
-                      'title': work.title,
-                      'hash': '',
-                    },
+                    {'url': coverUrl, 'title': work.title, 'hash': ''},
                   ],
                   initialIndex: 0,
                 ),

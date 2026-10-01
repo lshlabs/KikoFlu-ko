@@ -1,3 +1,4 @@
+import '../providers/work_title_provider.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -71,32 +72,33 @@ class _OfflineFileExplorerWidgetState
   String? _workDirPath;
 
   FilePreviewResolver get _previewResolver => FilePreviewResolver(
-        downloadRootPath: () async {
-          final downloadDir = await DownloadPathService.getDownloadDirectory();
-          return downloadDir.path;
-        },
-      );
+    downloadRootPath: () async {
+      final downloadDir = await DownloadPathService.getDownloadDirectory();
+      return downloadDir.path;
+    },
+  );
 
   FileSizeResolver get _fileSizeResolver => FileSizeResolver(
-        downloadRootPath: () async {
-          final downloadDir = await DownloadPathService.getDownloadDirectory();
-          return downloadDir.path;
-        },
-      );
+    downloadRootPath: () async {
+      final downloadDir = await DownloadPathService.getDownloadDirectory();
+      return downloadDir.path;
+    },
+  );
 
   AudioFileUrlResolver get _audioUrlResolver => AudioFileUrlResolver(
-        resolveDownloadedPath: (_, __) async => null,
-        downloadRootPath: () async {
-          final downloadDir = await DownloadPathService.getDownloadDirectory();
-          return downloadDir.path;
-        },
-        resolveCachedAudioPath: (_) async => null,
-      );
+    resolveDownloadedPath: (_, __) async => null,
+    downloadRootPath: () async {
+      final downloadDir = await DownloadPathService.getDownloadDirectory();
+      return downloadDir.path;
+    },
+    resolveCachedAudioPath: (_) async => null,
+  );
 
   final VideoFileOpener _videoFileOpener = VideoFileOpener();
   final SubtitleMatchLoader _subtitleMatchLoader = const SubtitleMatchLoader();
-  final FileExplorerTapResolver _tapResolver =
-      const FileExplorerTapResolver(videoBeforeAudio: false);
+  final FileExplorerTapResolver _tapResolver = const FileExplorerTapResolver(
+    videoBeforeAudio: false,
+  );
   final AudioPlaybackPlanBuilder _audioPlaybackPlanBuilder =
       const AudioPlaybackPlanBuilder();
   final FileNameTranslationController _translationController =
@@ -206,7 +208,8 @@ class _OfflineFileExplorerWidgetState
         ..addAll(matches);
 
       _log.captureOutput(
-          '[OfflineFileExplorer] 字幕库匹配: ${_audioWithLibrarySubtitles.length} 个音频文件有字幕');
+        '[OfflineFileExplorer] 字幕库匹配: ${_audioWithLibrarySubtitles.length} 个音频文件有字幕',
+      );
     } catch (e) {
       _log.captureOutput('[OfflineFileExplorer] 检查字幕库失败: $e');
     }
@@ -230,7 +233,8 @@ class _OfflineFileExplorerWidgetState
     _expandedFolders.addAll(mainFolder.expandedPaths);
     if (mainFolder.path.isNotEmpty) {
       _log.captureOutput(
-          '[OfflineFileExplorer] 识别到主文件夹 $_mainFolderPath (音频:${mainFolder.audioCount}, 文本:${mainFolder.textCount})');
+        '[OfflineFileExplorer] 识别到主文件夹 $_mainFolderPath (音频:${mainFolder.audioCount}, 文本:${mainFolder.textCount})',
+      );
     }
   }
 
@@ -292,8 +296,9 @@ class _OfflineFileExplorerWidgetState
         '[OfflineFileExplorer] 播放目标: title="$title", '
         'workDir=${target.workDir}, localPath=${target.localPath}',
       );
-      final playlistMode =
-          await ref.read(audioTapPlaylistModeProvider.notifier).getMode();
+      final playlistMode = await ref
+          .read(audioTapPlaylistModeProvider.notifier)
+          .getMode();
       if (!mounted) return;
       final plan = await _audioPlaybackPlanBuilder.build(
         fileTree: _localFiles,
@@ -305,6 +310,7 @@ class _OfflineFileExplorerWidgetState
           parentPath: parentPath,
         ),
         work: widget.work,
+        displayTitle: ref.read(displayedWorkTitleProvider(widget.work)),
         unknownTitle: l10n.unknown,
         artworkUrl: target.artworkUrl,
         subtitleWorkDirPath: target.workDir,
@@ -336,10 +342,13 @@ class _OfflineFileExplorerWidgetState
             'startIndex=${queue.startIndex}, '
             'startTitle="${queue.tracks[queue.startIndex].title}"',
           );
-          await ref.read(audioPlayerControllerProvider.notifier).playTracks(
+          await ref
+              .read(audioPlayerControllerProvider.notifier)
+              .playTracks(
                 queue.tracks,
                 startIndex: queue.startIndex,
                 work: widget.work,
+
                 playlistMode: playlistMode,
               );
       }
@@ -365,10 +374,9 @@ class _OfflineFileExplorerWidgetState
       subtitleTitle: title,
       currentAudioTitle: currentTrack?.title,
       loadSubtitle: (file, {required workId}) {
-        return ref.read(lyricControllerProvider.notifier).loadLyricManually(
-              file,
-              workId: workId,
-            );
+        return ref
+            .read(lyricControllerProvider.notifier)
+            .loadLyricManually(file, workId: workId);
       },
       isMounted: () => mounted,
     );
@@ -425,10 +433,7 @@ class _OfflineFileExplorerWidgetState
     await _previewDocumentFile(file, isPdf: true);
   }
 
-  Future<void> _previewDocumentFile(
-    dynamic file, {
-    required bool isPdf,
-  }) async {
+  Future<void> _previewDocumentFile(dynamic file, {required bool isPdf}) async {
     final l10n = S.of(context);
     final result = await _previewResolver.resolveOfflineDocumentTarget(
       file: file,
@@ -594,18 +599,16 @@ class _OfflineFileExplorerWidgetState
         workDirPath: _workDirPath,
       ),
       builder: (context, snapshot) {
-        final fileSize =
-            snapshot.hasData ? FileSizeResolver.formatBytes(snapshot.data) : '';
+        final fileSize = snapshot.hasData
+            ? FileSizeResolver.formatBytes(snapshot.data)
+            : '';
         if (fileSize.isEmpty) {
           return const SizedBox.shrink();
         }
 
         return Text(
           fileSize,
-          style: TextStyle(
-            fontSize: 11,
-            color: Colors.grey[600],
-          ),
+          style: TextStyle(fontSize: 11, color: Colors.grey[600]),
         );
       },
     );
@@ -696,7 +699,9 @@ class _OfflineFileExplorerWidgetState
         return;
       case FileExplorerTapAction.unsupported:
         SnackBarUtil.showInfo(
-            context, S.of(context).unsupportedFileType(title));
+          context,
+          S.of(context).unsupportedFileType(title),
+        );
     }
   }
 
@@ -722,9 +727,8 @@ class _OfflineFileExplorerWidgetState
         showDialog(
           context: context,
           barrierDismissible: false,
-          builder: (context) => const Center(
-            child: CircularProgressIndicator(),
-          ),
+          builder: (context) =>
+              const Center(child: CircularProgressIndicator()),
         );
       }
 

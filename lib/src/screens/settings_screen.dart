@@ -1,3 +1,5 @@
+import '../providers/work_title_provider.dart';
+import '../providers/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../l10n/app_localizations.dart';
@@ -117,6 +119,60 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final dockExtent = LiquidGlassDockScope.extentOf(context);
     final cards = [
       _buildAccountCard(context),
+      if (ref.watch(authProvider).currentUser?.name == 'admin' &&
+          !ref.read(kikoeruApiServiceProvider).isOfficialServer)
+        Card(
+          child: ListTile(
+            leading: const Icon(Icons.translate),
+            title: const Text('한국어 메타데이터 수집'),
+            subtitle: const Text(
+              'DLsite 수집 언어를 한국어로 설정합니다. 기존 작품은 서버에서 메타데이터를 갱신해야 합니다.',
+            ),
+            onTap: () async {
+              try {
+                await ref
+                    .read(kikoeruApiServiceProvider)
+                    .setMetadataLanguage('ko-kr');
+                if (!context.mounted) return;
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('서버의 수집 언어를 한국어로 설정했습니다.')),
+                );
+              } catch (_) {
+                if (!context.mounted) return;
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('수집 언어를 저장하지 못했습니다. 서버 연결과 관리자 권한을 확인하세요.'),
+                  ),
+                );
+              }
+            },
+          ),
+        ),
+      Card(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: DropdownButtonFormField<WorkTitleMode>(
+            initialValue: ref.watch(workTitleModeProvider),
+            decoration: const InputDecoration(labelText: '작품 제목 표시 방식'),
+            items: const [
+              DropdownMenuItem(
+                value: WorkTitleMode.metadata,
+                child: Text('DLsite 제목'),
+              ),
+              DropdownMenuItem(value: WorkTitleMode.folder, child: Text('폴더명')),
+              DropdownMenuItem(
+                value: WorkTitleMode.custom,
+                child: Text('직접 지정한 제목'),
+              ),
+            ],
+            onChanged: (mode) {
+              if (mode != null) {
+                ref.read(workTitleModeProvider.notifier).setMode(mode);
+              }
+            },
+          ),
+        ),
+      ),
       _buildDownloadAndCacheCard(context),
       _buildAppearanceAndAboutCard(context),
     ];

@@ -3,11 +3,7 @@ import '../models/audio_tap_playlist_mode.dart';
 import '../utils/file_tree_utils.dart';
 import 'audio_track_queue_builder.dart';
 
-enum AudioPlaybackPlanStatus {
-  ready,
-  selectedFileMissing,
-  emptyQueue,
-}
+enum AudioPlaybackPlanStatus { ready, selectedFileMissing, emptyQueue }
 
 class AudioPlaybackPlan {
   const AudioPlaybackPlan._({
@@ -60,13 +56,16 @@ class AudioPlaybackPlanBuilder {
     required AudioUrlResolver resolveUrl,
     required Work work,
     required String unknownTitle,
+    String? displayTitle,
     String? artworkUrl,
     String? subtitleWorkDirPath,
     bool requireHash = false,
     AudioTapPlaylistMode playlistMode = AudioTapPlaylistMode.replaceQueue,
   }) async {
-    final selectedTitle =
-        FileTreeUtils.titleOf(selectedFile, defaultValue: unknownTitle);
+    final selectedTitle = FileTreeUtils.titleOf(
+      selectedFile,
+      defaultValue: unknownTitle,
+    );
     final audioFiles = FileTreeUtils.audioFilesInDirectory(
       fileTree,
       parentPath,
@@ -85,7 +84,7 @@ class AudioPlaybackPlanBuilder {
       selectedFile: selectedFile,
       resolveUrl: resolveUrl,
       workId: work.id,
-      albumTitle: work.title,
+      albumTitle: displayTitle ?? work.title,
       unknownTitle: unknownTitle,
       artist: _artistInfo(work),
       artworkUrl: artworkUrl,
@@ -97,10 +96,7 @@ class AudioPlaybackPlanBuilder {
       return AudioPlaybackPlan.emptyQueue(selectedTitle);
     }
 
-    return AudioPlaybackPlan.ready(
-      selectedTitle: selectedTitle,
-      queue: queue,
-    );
+    return AudioPlaybackPlan.ready(selectedTitle: selectedTitle, queue: queue);
   }
 
   bool _containsSelectedFile(List<dynamic> audioFiles, dynamic selectedFile) {

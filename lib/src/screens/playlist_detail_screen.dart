@@ -1,3 +1,4 @@
+import '../providers/work_title_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -127,7 +128,9 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
 
       // 显示错误提示
       SnackBarUtil.showError(
-          context, S.of(context).deleteFailedWithError(e.toString()));
+        context,
+        S.of(context).deleteFailedWithError(e.toString()),
+      );
     }
   }
 
@@ -183,7 +186,9 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
       // 显示加载提示
       if (!mounted) return;
       SnackBarUtil.showLoading(
-          context, S.of(context).addingNWorks(workIds.length));
+        context,
+        S.of(context).addingNWorks(workIds.length),
+      );
 
       await ref
           .read(playlistDetailProvider(widget.playlistId).notifier)
@@ -196,7 +201,9 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
 
       // 显示成功提示
       SnackBarUtil.showSuccess(
-          context, S.of(context).addedNWorksSuccess(workIds.length));
+        context,
+        S.of(context).addedNWorksSuccess(workIds.length),
+      );
     } catch (e) {
       if (!mounted) return;
 
@@ -205,7 +212,9 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
 
       // 显示错误提示
       SnackBarUtil.showError(
-          context, S.of(context).addFailedWithError(e.toString()));
+        context,
+        S.of(context).addFailedWithError(e.toString()),
+      );
     }
   }
 
@@ -214,7 +223,11 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
     final confirmed = await showCommonConfirmationDialog(
       context: context,
       title: S.of(context).removeWork,
-      content: Text(S.of(context).removeWorkConfirm(work.title)),
+      content: Text(
+        S
+            .of(context)
+            .removeWorkConfirm(ref.watch(displayedWorkTitleProvider(work))),
+      ),
       confirmLabel: S.of(context).remove,
       variant: ConfirmationDialogVariant.danger,
     );
@@ -240,8 +253,11 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
       SnackBarUtil.clearAll(context);
 
       // 显示成功提示，缩短显示时间
-      SnackBarUtil.showSuccess(context, S.of(context).removeSuccess,
-          duration: const Duration(seconds: 1));
+      SnackBarUtil.showSuccess(
+        context,
+        S.of(context).removeSuccess,
+        duration: const Duration(seconds: 1),
+      );
     } catch (e) {
       if (!mounted) return;
 
@@ -250,7 +266,9 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
 
       // 显示错误提示
       SnackBarUtil.showError(
-          context, S.of(context).removeFailedWithError(e.toString()));
+        context,
+        S.of(context).removeFailedWithError(e.toString()),
+      );
     }
   }
 
@@ -288,7 +306,9 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
 
       // 显示错误提示
       SnackBarUtil.showError(
-          context, S.of(context).saveFailedWithError(e.toString()));
+        context,
+        S.of(context).saveFailedWithError(e.toString()),
+      );
     }
   }
 
@@ -315,9 +335,7 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
         tooltip: S.of(context).addWorks,
         child: const Icon(Icons.add),
       ),
-      body: ScrollNotificationObserver(
-        child: _buildBody(state),
-      ),
+      body: ScrollNotificationObserver(child: _buildBody(state)),
     );
   }
 
@@ -341,8 +359,8 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
             Text(
               state.error!,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 24),
@@ -362,15 +380,18 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
       return const Center(child: CircularProgressIndicator());
     }
 
-    final auth = ref.watch(authProvider.select(
-      (value) => (
-        host: value.host ?? '',
-        token: value.token ?? '',
-        userName: value.currentUser?.name ?? '',
+    final auth = ref.watch(
+      authProvider.select(
+        (value) => (
+          host: value.host ?? '',
+          token: value.token ?? '',
+          userName: value.currentUser?.name ?? '',
+        ),
       ),
-    ));
-    final notifier =
-        ref.read(playlistDetailProvider(widget.playlistId).notifier);
+    );
+    final notifier = ref.read(
+      playlistDetailProvider(widget.playlistId).notifier,
+    );
     final isOwner = state.metadata?.userName == auth.userName;
     final layoutType = ref.watch(playlistDisplayProvider);
     final isMasonry = layoutType == PlaylistLayoutType.masonry;
@@ -378,9 +399,11 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
         MediaQuery.orientationOf(context) == Orientation.landscape;
     final spacing = isLandscape ? 24.0 : 8.0;
     final crossAxisCount = isMasonry
-        ? ref.watch(workCardDisplayProvider).applyCardSize(
-              ResponsiveGridHelper.getBigGridCrossAxisCount(context),
-            )
+        ? ref
+              .watch(workCardDisplayProvider)
+              .applyCardSize(
+                ResponsiveGridHelper.getBigGridCrossAxisCount(context),
+              )
         : 1;
     final contentPadding = isMasonry ? spacing : 8.0;
 
@@ -458,8 +481,8 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
             Text(
               S.of(context).playlistNoWorksDescription,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
-                  ),
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
               textAlign: TextAlign.center,
             ),
           ],
@@ -547,11 +570,7 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
     final httpHeaders = StorageService.serverCookieHeaders;
     final initialCoverImageProvider = host.isEmpty
         ? null
-        : createWorkCoverImageProvider(
-            work: work,
-            host: host,
-            token: token,
-          );
+        : createWorkCoverImageProvider(work: work, host: host, token: token);
 
     return InkWell(
       onTap: () {
@@ -626,7 +645,7 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
                 children: [
                   // 标题
                   Text(
-                    work.title,
+                    ref.watch(displayedWorkTitleProvider(work)),
                     style: theme.textTheme.bodyLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                       height: 1.3,
