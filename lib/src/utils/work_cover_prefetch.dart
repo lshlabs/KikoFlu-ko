@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 
 import '../models/work.dart';
 import '../services/storage_service.dart';
-import 'work_thumbnail_urls.dart';
 
 const _maxPendingCoverPrefetches = 12;
 final Queue<_CoverPrefetchTask> _coverPrefetchQueue = Queue();
@@ -60,9 +59,9 @@ ImageProvider<Object> createWorkCoverImageProvider({
   Map<String, String>? headers,
 }) {
   final provider = CachedNetworkImageProvider(
-    workThumbnailUrls(work.getCoverImageUrl(host, token: token)).first,
+    work.getCoverImageUrl(host, token: token),
     headers: headers ?? StorageService.serverCookieHeaders,
-    cacheKey: 'work_cover_${work.id}_sam',
+    cacheKey: 'work_cover_${work.id}',
   );
   return ResizeImage.resizeIfNeeded(cacheWidth, null, provider);
 }

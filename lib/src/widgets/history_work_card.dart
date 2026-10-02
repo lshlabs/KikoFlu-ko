@@ -1,7 +1,7 @@
 import '../providers/work_title_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'work_thumbnail_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import '../models/history_record.dart';
 import '../models/download_task.dart';
 import '../providers/auth_provider.dart';
@@ -94,7 +94,7 @@ class HistoryWorkCard extends ConsumerWidget {
                     child: Material(
                       color: Colors.transparent,
                       child: PrivacyBlurCover(
-                        child: WorkThumbnailImage(
+                        child: CachedNetworkImage(
                           imageUrl: work.getCoverImageUrl(host, token: token),
                           httpHeaders: httpHeaders,
                           cacheKey: 'work_cover_${work.id}',

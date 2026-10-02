@@ -1,7 +1,7 @@
 import '../providers/work_title_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../widgets/work_thumbnail_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import '../providers/playlist_detail_provider.dart';
 import '../providers/auth_provider.dart';
 import '../providers/playlist_display_provider.dart';
@@ -604,7 +604,7 @@ class _PlaylistDetailScreenState extends ConsumerState<PlaylistDetailScreen> {
                 borderRadius: BorderRadius.circular(4),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(4),
-                  child: WorkThumbnailImage(
+                  child: CachedNetworkImage(
                     imageUrl: work.getCoverImageUrl(host, token: token),
                     httpHeaders: httpHeaders,
                     cacheKey: 'work_cover_${work.id}',

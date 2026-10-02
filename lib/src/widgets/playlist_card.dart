@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'work_thumbnail_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import '../models/playlist.dart';
 import '../../l10n/app_localizations.dart';
 import '../providers/auth_provider.dart';
@@ -49,7 +49,7 @@ class PlaylistCard extends ConsumerWidget {
                 ),
                 child: PrivacyBlurCover(
                   borderRadius: BorderRadius.circular(8),
-                  child: WorkThumbnailImage(
+                  child: CachedNetworkImage(
                     imageUrl:
                         playlist.getFullCoverUrl(auth.host, token: auth.token),
                     httpHeaders: httpHeaders,

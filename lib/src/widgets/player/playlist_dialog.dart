@@ -2,7 +2,7 @@ import 'dart:io' show File;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../work_thumbnail_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../models/audio_tap_playlist_mode.dart';
 import '../../providers/audio_provider.dart';
@@ -218,7 +218,7 @@ class PlaylistDialog extends ConsumerWidget {
                                                               size: 24);
                                                         },
                                                       )
-                                                    : WorkThumbnailImage(
+                                                    : CachedNetworkImage(
                                                         imageUrl: resolvedCover,
                                                         fit: BoxFit.cover,
                                                         errorWidget: (context,
