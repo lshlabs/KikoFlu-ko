@@ -18,12 +18,15 @@ class KikoeruApiService {
     if (isOfficialServer) {
       throw UnsupportedError('공식 서버의 수집 언어는 변경할 수 없습니다.');
     }
-    await _dio.put(
-      '/api/config/admin',
-      data: {
-        'config': {'tagLanguage': language},
-      },
-    );
+    await _dio.put('/api/config/metadata-language', data: {'language': language});
+  }
+
+  Future<String> getMetadataLanguage() async {
+    if (isOfficialServer) {
+      throw UnsupportedError('공식 서버의 수집 언어는 변경할 수 없습니다.');
+    }
+    final response = await _dio.get('/api/config/metadata-language');
+    return response.data['language'] as String;
   }
 
   static const String remoteHost = ServerUtils.defaultRemoteHost;

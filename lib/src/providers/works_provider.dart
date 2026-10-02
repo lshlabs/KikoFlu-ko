@@ -405,6 +405,17 @@ class WorksNotifier extends StateNotifier<WorksState> {
     }
   }
 
+  Future<void> reloadServerData() async {
+    for (final gate in _requestGates.values) {
+      gate.invalidate();
+    }
+    state = state.copyWith(modeStates: {
+      for (final mode in DisplayMode.values) mode: const WorksModeSnapshot(),
+    });
+    await refresh(resetPage: true);
+    if (state.error != null) throw StateError(state.error!);
+  }
+
   Future<void> refresh({bool resetPage = false}) async {
     await loadWorks(
       targetPage: resetPage ? 1 : state.currentPage,

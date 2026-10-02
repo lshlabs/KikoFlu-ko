@@ -570,6 +570,16 @@ class CacheService {
     }
   }
 
+  /// Discard server metadata while retaining downloaded media and preferences.
+  static Future<void> clearServerMetadataCache() async {
+    final prefs = await StorageService.getPrefs();
+    for (final key in prefs.getKeys()) {
+      if (key.startsWith('work_detail_') || key.startsWith('work_tracks_')) {
+        await prefs.remove(key);
+      }
+    }
+  }
+
   // 清除所有缓存
   static Future<void> clearAllCache() async {
     try {
