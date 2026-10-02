@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'work_thumbnail_image.dart';
 import 'package:real_liquid_glass/real_liquid_glass.dart';
 
 import '../models/audio_track.dart';
@@ -559,7 +559,7 @@ class _MiniPlayerState extends ConsumerState<MiniPlayer> {
                           return const Icon(Icons.album, size: 32);
                         },
                       )
-                    : CachedNetworkImage(
+                    : WorkThumbnailImage(
                         imageUrl: (workCoverUrl ?? track.artworkUrl)!,
                         cacheKey: track.workId != null
                             ? 'work_cover_${track.workId}'

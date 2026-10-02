@@ -1,7 +1,7 @@
 import '../providers/work_title_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'work_thumbnail_image.dart';
 import '../models/work.dart';
 import '../providers/auth_provider.dart';
 import '../providers/work_card_display_provider.dart';
@@ -833,7 +833,7 @@ class _EnhancedWorkCardState extends ConsumerState<EnhancedWorkCard> {
       child: PrivacyBlurCover(
         borderRadius: BorderRadius.circular(4),
         child: RepaintBoundary(
-          child: CachedNetworkImage(
+          child: WorkThumbnailImage(
             imageUrl: url,
             httpHeaders: httpHeaders,
             cacheKey: 'work_cover_${widget.work.id}',

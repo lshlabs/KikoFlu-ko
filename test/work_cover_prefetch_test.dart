@@ -76,8 +76,8 @@ void main() {
     expect(
       resized.imageProvider,
       const CachedNetworkImageProvider(
-        'https://example.com/api/cover/123456?token=token',
-        cacheKey: 'work_cover_123456',
+        'https://example.com/api/cover/123456?token=token&type=sam',
+        cacheKey: 'work_cover_123456_sam',
       ),
     );
   });
